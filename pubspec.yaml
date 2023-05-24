@@ -55,6 +55,8 @@ dependencies:
   flutter_intro: ^2.3.1
   flutter_svg: ^0.23.0+1
   flutx: ^0.1.2
+  flutter_form_builder: ^6.0.0
+  flutter_secure_storage: ^8.0.0
 
 dev_dependencies:
   flutter_lints: ^2.0.1
