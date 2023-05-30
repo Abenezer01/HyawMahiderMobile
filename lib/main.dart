@@ -4,6 +4,7 @@
 * Version : 13
 * */
 
+import 'package:hyaw_mahider/guard/auth-guard.dart';
 import 'package:hyaw_mahider/homes/homes_screen.dart';
 import 'package:hyaw_mahider/localizations/app_localization_delegate.dart';
 import 'package:hyaw_mahider/localizations/language.dart';
@@ -14,11 +15,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:provider/provider.dart';
-import 'package:hyaw_mahider/auth/login.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<void> main() async {
   //You will need to initialize AppThemeNotifier class for theme changes.
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load();
 
   AppTheme.init();
 
@@ -55,7 +57,7 @@ class MyApp extends StatelessWidget {
             // home: IntroScreen(),
             // home: SplashScreen(),
             // home: HomesScreen(),
-            home: LoginScreen());
+            home: AuthGuard(child: HomesScreen()));
       },
     );
   }

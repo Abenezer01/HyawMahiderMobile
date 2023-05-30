@@ -1,7 +1,8 @@
 import 'package:http/http.dart' as http;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class APIService {
-  static const String baseUrl = 'http://localhost:7000/api/v1';
+  final baseUrl = dotenv.env['API_URL'] ?? 'API_URL not found';
 
   Future<dynamic> getData(String endpoint) async {
     final response = await http.get(Uri.parse('$baseUrl/$endpoint'));

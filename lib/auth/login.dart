@@ -4,13 +4,14 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:hyaw_mahider/services/auth-service.dart';
 import 'package:flutx/flutx.dart';
 import 'package:hyaw_mahider/theme/app_theme.dart';
+import 'package:hyaw_mahider/homes/homes_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
-  _Login1ScreenState createState() => _Login1ScreenState();
+  _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _Login1ScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   bool _passwordVisible = false;
   late CustomTheme customTheme;
   late ThemeData theme;
@@ -150,7 +151,7 @@ class _Login1ScreenState extends State<LoginScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => NextScreen()),
+                                    builder: (context) => HomesScreen()),
                               );
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
@@ -212,20 +213,6 @@ class _Login1ScreenState extends State<LoginScreen> {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class NextScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Next Screen'),
-      ),
-      body: Center(
-        child: Text('Welcome to the next screen!'),
       ),
     );
   }
