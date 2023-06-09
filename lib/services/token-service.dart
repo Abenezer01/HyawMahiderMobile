@@ -1,12 +1,12 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class AuthService {
-  static final AuthService _instance = AuthService._internal();
+class TokenService {
+  static final TokenService _instance = TokenService._internal();
   final FlutterSecureStorage _storage = FlutterSecureStorage();
 
-  AuthService._internal();
+  TokenService._internal();
 
-  factory AuthService() {
+  factory TokenService() {
     return _instance;
   }
 
