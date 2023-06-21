@@ -41,7 +41,7 @@ class _SingleCoinScreenState extends State<SingleCoinScreen> {
                   onTap: () {
                     controller.goBack();
                   },
-                  child: Icon(FeatherIcons.chevronLeft)),
+                  child: const Icon(FeatherIcons.chevronLeft)),
             ),
             body: Padding(
               padding: FxSpacing.nTop(20),
@@ -164,14 +164,14 @@ class _SingleCoinScreenState extends State<SingleCoinScreen> {
         margin: EdgeInsets.zero,
         primaryXAxis: NumericAxis(
             isVisible: false,
-            majorGridLines: MajorGridLines(width: 0),
+            majorGridLines: const MajorGridLines(width: 0),
             edgeLabelPlacement: EdgeLabelPlacement.shift),
         primaryYAxis: NumericAxis(
             isVisible: true,
             interval: 200,
-            axisLine: AxisLine(width: 0),
-            majorGridLines: MajorGridLines(width: 0),
-            majorTickLines: MajorTickLines(size: 0),
+            axisLine: const AxisLine(width: 0),
+            majorGridLines: const MajorGridLines(width: 0),
+            majorTickLines: const MajorTickLines(size: 0),
             edgeLabelPlacement: EdgeLabelPlacement.shift),
         series: controller.getCoinSeries(),
         tooltipBehavior: TooltipBehavior(enable: true),

@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
     theme = AppTheme.rentalServiceTheme;
     controller = FxControllerStore.putOrFind(LoginController());
-    outlineInputBorder = OutlineInputBorder(
+    outlineInputBorder = const OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(8)),
       borderSide: BorderSide(
         color: Colors.transparent,
@@ -94,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
           enabledBorder: outlineInputBorder,
           focusedBorder: outlineInputBorder,
           border: outlineInputBorder,
-          prefixIcon: Icon(Icons.person),
+          prefixIcon: const Icon(Icons.person),
           contentPadding: FxSpacing.all(16),
           hintStyle: FxTextStyle.bodyMedium(xMuted: true),
           isCollapsed: true),
@@ -118,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
           enabledBorder: outlineInputBorder,
           focusedBorder: outlineInputBorder,
           border: outlineInputBorder,
-          prefixIcon: Icon(Icons.lock),
+          prefixIcon: const Icon(Icons.lock),
           suffixIcon: InkWell(
               onTap: () {
                 controller.toggle();

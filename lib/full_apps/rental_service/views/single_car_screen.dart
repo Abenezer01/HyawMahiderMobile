@@ -40,7 +40,7 @@ class _SingleCarScreenState extends State<SingleCarScreen> {
                 onTap: () {
                   controller.goBack();
                 },
-                child: Icon(
+                child: const Icon(
                   FeatherIcons.chevronLeft,
                 ),
               ),
@@ -131,7 +131,7 @@ class _SingleCarScreenState extends State<SingleCarScreen> {
   Widget location() {
     return Row(
       children: [
-        Icon(
+        const Icon(
           FeatherIcons.mapPin,
           size: 12,
         ),

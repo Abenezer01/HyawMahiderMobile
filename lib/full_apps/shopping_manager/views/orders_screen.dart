@@ -25,7 +25,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
     super.initState();
     theme = AppTheme.shoppingManagerTheme;
     controller = FxControllerStore.putOrFind(OrdersController());
-    outlineInputBorder = OutlineInputBorder(
+    outlineInputBorder = const OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(4)),
       borderSide: BorderSide.none,
     );

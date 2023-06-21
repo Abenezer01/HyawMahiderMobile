@@ -8,7 +8,7 @@ class SplashController extends FxController {
   void goToLoginScreen() {
     Navigator.of(context, rootNavigator: true).pushReplacement(
       MaterialPageRoute(
-        builder: (context) => LoginScreen(),
+        builder: (context) => const LoginScreen(),
       ),
     );
   }
@@ -16,7 +16,7 @@ class SplashController extends FxController {
   void goToRegisterScreen() {
     Navigator.of(context, rootNavigator: true).pushReplacement(
       MaterialPageRoute(
-        builder: (context) => RegisterScreen(),
+        builder: (context) => const RegisterScreen(),
       ),
     );
   }

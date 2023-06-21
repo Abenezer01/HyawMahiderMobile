@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
     outlineInputBorder = OutlineInputBorder(
       borderRadius:
           BorderRadius.all(Radius.circular(Constant.containerRadius.medium)),
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         color: Colors.transparent,
       ),
     );
@@ -106,7 +106,7 @@ class _SplashScreenState extends State<SplashScreen> {
       paddingAll: 0,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       borderRadiusAll: Constant.containerRadius.large,
-      child: Image(
+      child: const Image(
         height: 400,
         fit: BoxFit.cover,
         image: AssetImage(

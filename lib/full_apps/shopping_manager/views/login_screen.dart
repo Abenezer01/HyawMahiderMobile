@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
     theme = AppTheme.shoppingManagerTheme;
     controller = FxControllerStore.putOrFind(LoginController());
     outlineInputBorder = OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(4)),
+      borderRadius: const BorderRadius.all(Radius.circular(4)),
       borderSide: BorderSide(
         color: theme.dividerColor,
       ),
@@ -91,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
           color: theme.colorScheme.primary,
         ),
         isDense: true,
-        contentPadding: EdgeInsets.all(0),
+        contentPadding: const EdgeInsets.all(0),
       ),
       controller: controller.emailController,
       validator: controller.validateEmail,
@@ -128,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
           color: theme.colorScheme.primary,
         ),
         isDense: true,
-        contentPadding: EdgeInsets.all(0),
+        contentPadding: const EdgeInsets.all(0),
       ),
       controller: controller.passwordController,
       validator: controller.validatePassword,

@@ -59,7 +59,7 @@ class _SavedScreenState extends State<SavedScreen> {
         padding: FxSpacing.zero,
         shrinkWrap: true,
         itemCount: controller.cars.length,
-        physics: ClampingScrollPhysics(),
+        physics: const ClampingScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: controller.findAspectRatio(),
@@ -109,7 +109,7 @@ class _SavedScreenState extends State<SavedScreen> {
                 FxSpacing.height(4),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       FeatherIcons.mapPin,
                       size: 12,
                     ),

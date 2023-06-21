@@ -15,10 +15,10 @@ class OrderController extends FxController {
   GlobalKey<FormState> formKey = GlobalKey();
   final Order order;
   GoogleMapController? mapController;
-  final LatLng center = LatLng(37.404049, -122.114016);
-  final startLocation = LatLng(37.400987, -122.113969);
-  final deliveryBoyLocation = LatLng(37.401709, -122.113483);
-  final deliveryLocation = LatLng(37.406441, -122.113856);
+  final LatLng center = const LatLng(37.404049, -122.114016);
+  final startLocation = const LatLng(37.400987, -122.113969);
+  final deliveryBoyLocation = const LatLng(37.401709, -122.113483);
+  final deliveryLocation = const LatLng(37.406441, -122.113856);
   final Set<Polyline> polylines = HashSet();
   final Set<Marker> markers = HashSet();
   BitmapDescriptor? deliveryPinIcon, shopPinIcon, deliveryBoyPinIcon;
@@ -33,24 +33,24 @@ class OrderController extends FxController {
 
   initMapAssets() async {
     List<LatLng> points = [
-      LatLng(37.406441, -122.113856),
-      LatLng(37.406435, -122.113713),
-      LatLng(37.406258, -122.113462),
-      LatLng(37.406015, -122.113083),
-      LatLng(37.405688, -122.112591),
-      LatLng(37.405477, -122.112229),
-      LatLng(37.405301, -122.111950),
-      LatLng(37.405113, -122.111638),
-      LatLng(37.405019, -122.111488),
-      LatLng(37.404928, -122.111516),
-      LatLng(37.403258, -122.112515),
-      LatLng(37.402380, -122.113030),
-      LatLng(37.401775, -122.113422),
+      const LatLng(37.406441, -122.113856),
+      const LatLng(37.406435, -122.113713),
+      const LatLng(37.406258, -122.113462),
+      const LatLng(37.406015, -122.113083),
+      const LatLng(37.405688, -122.112591),
+      const LatLng(37.405477, -122.112229),
+      const LatLng(37.405301, -122.111950),
+      const LatLng(37.405113, -122.111638),
+      const LatLng(37.405019, -122.111488),
+      const LatLng(37.404928, -122.111516),
+      const LatLng(37.403258, -122.112515),
+      const LatLng(37.402380, -122.113030),
+      const LatLng(37.401775, -122.113422),
     ];
 
     polylines.addAll([
       Polyline(
-          polylineId: PolylineId("1"),
+          polylineId: const PolylineId("1"),
           points: points,
           width: 2,
           color: theme.colorScheme.primary)
@@ -64,17 +64,17 @@ class OrderController extends FxController {
         await getBytesFromAsset(ShoppingCache.deliveryBoyIcon, 64));
     markers.addAll([
       Marker(
-        markerId: MarkerId('shop'),
+        markerId: const MarkerId('shop'),
         position: startLocation,
         icon: shopPinIcon!,
       ),
       Marker(
-        markerId: MarkerId('delivery_boy'),
+        markerId: const MarkerId('delivery_boy'),
         position: deliveryBoyLocation,
         icon: deliveryBoyPinIcon!,
       ),
       Marker(
-        markerId: MarkerId('delivery'),
+        markerId: const MarkerId('delivery'),
         position: deliveryLocation,
         icon: deliveryPinIcon!,
       ),

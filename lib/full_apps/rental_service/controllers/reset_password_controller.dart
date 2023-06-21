@@ -54,7 +54,7 @@ class ResetPasswordController extends FxController {
     if (formKey.currentState!.validate()) {
       Navigator.of(context, rootNavigator: true).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => RentalServiceFullApp(),
+          builder: (context) => const RentalServiceFullApp(),
         ),
       );
     }

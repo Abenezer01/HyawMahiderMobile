@@ -25,7 +25,7 @@ class SingleCarController extends FxController {
   void goToPaymentScreen() {
     Navigator.of(context, rootNavigator: true).pushReplacement(
       MaterialPageRoute(
-        builder: (context) => PaymentScreen(),
+        builder: (context) => const PaymentScreen(),
       ),
     );
   }

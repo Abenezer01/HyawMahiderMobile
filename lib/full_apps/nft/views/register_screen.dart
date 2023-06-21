@@ -25,7 +25,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     outlineInputBorder = OutlineInputBorder(
       borderRadius:
           BorderRadius.all(Radius.circular(Constant.containerRadius.xs)),
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         color: Colors.transparent,
       ),
     );
@@ -55,7 +55,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     FxSpacing.height(10),
                     loginBtn(),
                     FxSpacing.height(20),
-                    Divider(),
+                    const Divider(),
                     FxSpacing.height(20),
                     google(),
                     FxSpacing.height(20),
@@ -197,7 +197,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             height: 20,
             width: 20,
             color: theme.colorScheme.primary,
-            image: AssetImage(
+            image: const AssetImage(
               'assets/images/full_apps/nft/icons/google.png',
             ),
           ),
@@ -225,7 +225,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             height: 20,
             width: 20,
             color: theme.colorScheme.primary,
-            image: AssetImage('assets/images/full_apps/nft/icons/facebook.png'),
+            image: const AssetImage(
+                'assets/images/full_apps/nft/icons/facebook.png'),
           ),
           FxSpacing.width(12),
           FxText.labelLarge(
@@ -250,7 +251,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             height: 20,
             width: 20,
             color: theme.colorScheme.primary,
-            image: AssetImage('assets/images/full_apps/nft/icons/apple.png'),
+            image:
+                const AssetImage('assets/images/full_apps/nft/icons/apple.png'),
           ),
           FxSpacing.width(12),
           FxText.labelLarge(

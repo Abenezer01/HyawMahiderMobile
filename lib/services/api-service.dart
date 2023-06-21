@@ -1,5 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'dart:convert';
 
 class APIService {
   final baseUrl = dotenv.env['API_URL'] ?? 'API_URL not found';
@@ -17,8 +18,11 @@ class APIService {
   }
 
   Future<dynamic> postData(String endpoint, Map<String, dynamic> data) async {
-    final response =
-        await http.post(Uri.parse('$baseUrl/$endpoint'), body: data);
+    final response = await http.post(
+      Uri.parse('$baseUrl/$endpoint'),
+      body: json.encode(data), // Convert to JSON string
+      headers: {'Content-Type': 'application/json'}, // Set Content-Type header
+    );
 
     if (response.statusCode == 201) {
       // Return the parsed response data

@@ -27,7 +27,7 @@ class ForgotPasswordController extends FxController {
   void goToRegisterScreen() {
     Navigator.of(context, rootNavigator: true).pushReplacement(
       MaterialPageRoute(
-        builder: (context) => RegisterScreen(),
+        builder: (context) => const RegisterScreen(),
       ),
     );
   }
@@ -36,7 +36,7 @@ class ForgotPasswordController extends FxController {
     if (formKey.currentState!.validate()) {
       Navigator.of(context, rootNavigator: true).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => ResetPasswordScreen(),
+          builder: (context) => const ResetPasswordScreen(),
         ),
       );
     }

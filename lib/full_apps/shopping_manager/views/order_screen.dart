@@ -29,7 +29,7 @@ class _OrderScreenState extends State<OrderScreen> {
     theme = AppTheme.shoppingManagerTheme;
     controller = FxControllerStore.put(OrderController(widget.order));
     outlineInputBorder = OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(4)),
+      borderRadius: const BorderRadius.all(Radius.circular(4)),
       borderSide: BorderSide(
         color: theme.dividerColor,
       ),
@@ -81,7 +81,7 @@ class _OrderScreenState extends State<OrderScreen> {
                   onTap: () {
                     controller.goBack();
                   },
-                  child: Icon(
+                  child: const Icon(
                     FeatherIcons.chevronLeft,
                     size: 20,
                   )),
@@ -135,7 +135,7 @@ class _OrderScreenState extends State<OrderScreen> {
               )
             ],
           ),
-          Divider(
+          const Divider(
             height: 36,
           ),
           Row(
@@ -191,7 +191,7 @@ class _OrderScreenState extends State<OrderScreen> {
             children: [
               Row(
                 children: [
-                  FxContainer.bordered(
+                  const FxContainer.bordered(
                     paddingAll: 4,
                     child: Icon(
                       FeatherIcons.chevronDown,

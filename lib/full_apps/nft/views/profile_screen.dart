@@ -61,7 +61,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget image() {
-    return Center(
+    return const Center(
       child: FxContainer.rounded(
         height: 100,
         paddingAll: 0,
@@ -112,7 +112,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
         FxSpacing.height(20),
         singleRow(Icons.dashboard, "Dashboard", "Your portfolio assets"),
-        Divider(),
+        const Divider(),
         FxSpacing.height(8),
         singleRow(Icons.admin_panel_settings, "Privacy Setting",
             "PIN & Biometric security"),
@@ -125,11 +125,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
         FxSpacing.height(20),
         singleRow(
             Icons.account_balance, "Bank Account", "Manage your account bank"),
-        Divider(),
+        const Divider(),
         FxSpacing.height(8),
         singleRow(
             Icons.notifications, "Notification", "Manage your notification"),
-        Divider(),
+        const Divider(),
         FxSpacing.height(8),
         singleRow(Icons.redeem, "Refferal Code", "Manage your notification"),
       ],
@@ -164,7 +164,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ),
           FxSpacing.width(20),
-          Icon(
+          const Icon(
             FeatherIcons.chevronRight,
             size: 18,
           ),

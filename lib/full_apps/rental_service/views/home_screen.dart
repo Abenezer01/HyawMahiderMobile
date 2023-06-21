@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
     outlineInputBorder = OutlineInputBorder(
       borderRadius:
           BorderRadius.all(Radius.circular(Constant.containerRadius.medium)),
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         color: Colors.transparent,
       ),
     );
@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
           FxContainer(
             paddingAll: 8,
             borderRadiusAll: Constant.containerRadius.medium,
-            child: Icon(
+            child: const Icon(
               FeatherIcons.mapPin,
               size: 20,
             ),
@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          FxContainer.rounded(
+          const FxContainer.rounded(
             paddingAll: 0,
             height: 40,
             width: 40,
@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       floatingLabelBehavior: FloatingLabelBehavior.never,
                       isDense: true,
                       filled: true,
-                      prefixIcon: Icon(FeatherIcons.search),
+                      prefixIcon: const Icon(FeatherIcons.search),
                       hintText: "Search Here",
                       enabledBorder: outlineInputBorder,
                       focusedBorder: outlineInputBorder,
@@ -294,7 +294,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 FxSpacing.height(4),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       FeatherIcons.mapPin,
                       size: 14,
                     ),

@@ -22,7 +22,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     super.initState();
     theme = AppTheme.rentalServiceTheme;
     controller = FxControllerStore.putOrFind(ForgotPasswordController());
-    outlineInputBorder = OutlineInputBorder(
+    outlineInputBorder = const OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(8)),
       borderSide: BorderSide(
         color: Colors.transparent,
@@ -90,7 +90,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           enabledBorder: outlineInputBorder,
           focusedBorder: outlineInputBorder,
           border: outlineInputBorder,
-          prefixIcon: Icon(Icons.person),
+          prefixIcon: const Icon(Icons.person),
           contentPadding: FxSpacing.all(16),
           hintStyle: FxTextStyle.bodyMedium(xMuted: true),
           isCollapsed: true),

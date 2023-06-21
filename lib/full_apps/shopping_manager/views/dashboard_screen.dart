@@ -26,7 +26,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     theme = AppTheme.shoppingManagerTheme;
     controller = FxControllerStore.putOrFind(DashboardController());
     outlineInputBorder = OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(4)),
+      borderRadius: const BorderRadius.all(Radius.circular(4)),
       borderSide: BorderSide(
         color: theme.dividerColor,
       ),
@@ -101,7 +101,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 controller.time,
               ),
               FxSpacing.width(8),
-              Icon(
+              const Icon(
                 FeatherIcons.chevronDown,
                 size: 14,
               )
@@ -282,16 +282,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
       margin: EdgeInsets.zero,
       plotAreaBorderWidth: 0,
       primaryXAxis: CategoryAxis(
-        majorGridLines: MajorGridLines(
+        majorGridLines: const MajorGridLines(
           width: 0,
           color: Colors.transparent,
         ),
       ),
       primaryYAxis: NumericAxis(
-          majorGridLines: MajorGridLines(width: 0),
-          axisLine: AxisLine(width: 0, color: Colors.transparent),
+          majorGridLines: const MajorGridLines(width: 0),
+          axisLine: const AxisLine(width: 0, color: Colors.transparent),
           labelFormat: '{value}k',
-          majorTickLines: MajorTickLines(size: 4, color: Colors.transparent)),
+          majorTickLines:
+              const MajorTickLines(size: 4, color: Colors.transparent)),
       series: _getDefaultColumnSeries(),
       tooltipBehavior: controller.tooltipBehavior,
     );
@@ -307,7 +308,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         width: 0.5,
         borderRadius: BorderRadius.vertical(
             top: Radius.circular(Constant.containerRadius.xs)),
-        dataLabelSettings: DataLabelSettings(
+        dataLabelSettings: const DataLabelSettings(
             isVisible: false, textStyle: TextStyle(fontSize: 10)),
       )
     ];

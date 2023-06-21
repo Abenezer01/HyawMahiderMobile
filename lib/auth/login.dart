@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.all(0),
+        padding: const EdgeInsets.all(0),
         children: <Widget>[
           SizedBox(
             height: MediaQuery.of(context).size.height * 3 / 10,
@@ -48,8 +48,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 Container(
                   decoration: BoxDecoration(
                     color: theme.colorScheme.background,
-                    borderRadius:
-                        BorderRadius.only(bottomLeft: Radius.circular(96)),
+                    borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(96)),
                   ),
                 ),
                 Positioned(
@@ -69,10 +69,10 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+            margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
             child: FxContainer.bordered(
-              padding:
-                  EdgeInsets.only(top: 12, left: 20, right: 20, bottom: 12),
+              padding: const EdgeInsets.only(
+                  top: 12, left: 20, right: 20, bottom: 12),
               child: FormBuilder(
                 key: _formKey,
                 child: Column(
@@ -92,12 +92,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: theme.colorScheme.onBackground,
                           fontWeight: FontWeight.w500,
                         ),
-                        prefixIcon: Icon(MdiIcons.emailOutline),
+                        prefixIcon: const Icon(MdiIcons.emailOutline),
                       ),
                       validator: FormBuilderValidators.required(context),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 20),
+                      margin: const EdgeInsets.only(top: 20),
                       child: FormBuilderTextField(
                         name: 'password',
                         controller: _passwordController,
@@ -113,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: theme.colorScheme.onBackground,
                             fontWeight: FontWeight.w500,
                           ),
-                          prefixIcon: Icon(MdiIcons.lockOutline),
+                          prefixIcon: const Icon(MdiIcons.lockOutline),
                           suffixIcon: IconButton(
                             icon: Icon(_passwordVisible
                                 ? MdiIcons.eyeOutline
@@ -130,13 +130,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 20),
+                      margin: const EdgeInsets.only(top: 20),
                       alignment: Alignment.centerRight,
                       child: FxText.bodySmall("Forgot Password ?",
                           fontWeight: 500),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 20),
+                      margin: const EdgeInsets.only(top: 20),
                       child: FxButton(
                         elevation: 0,
                         borderRadiusAll: 4,
@@ -155,7 +155,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               );
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
+                                const SnackBar(
                                     content: Text(
                                         'Login failed. Please check your credentials.')),
                               );
@@ -176,13 +176,13 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 24),
+            margin: const EdgeInsets.only(top: 24),
             child: Center(
               child: FxText.bodyMedium("OR", fontWeight: 500),
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 20, bottom: 20),
+            margin: const EdgeInsets.only(top: 20, bottom: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -197,7 +197,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     size: 30,
                   ),
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 FxContainer.rounded(
                   width: 52,
                   height: 52,

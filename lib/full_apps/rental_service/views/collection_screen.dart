@@ -25,7 +25,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
     super.initState();
     theme = AppTheme.rentalServiceTheme;
     controller = FxControllerStore.putOrFind(CollectionController());
-    outlineInputBorder = OutlineInputBorder(
+    outlineInputBorder = const OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(8)),
       borderSide: BorderSide(
         color: Colors.transparent,
@@ -66,7 +66,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
           floatingLabelBehavior: FloatingLabelBehavior.never,
           isDense: true,
           filled: true,
-          prefixIcon: Icon(
+          prefixIcon: const Icon(
             FeatherIcons.search,
           ),
           hintText: "Search your favorite car",
@@ -109,7 +109,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
           FxSpacing.height(4),
           Row(
             children: [
-              Icon(
+              const Icon(
                 FeatherIcons.mapPin,
                 size: 12,
               ),

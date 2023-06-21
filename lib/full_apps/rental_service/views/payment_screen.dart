@@ -36,7 +36,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 onTap: () {
                   controller.goBack();
                 },
-                child: Icon(
+                child: const Icon(
                   FeatherIcons.chevronLeft,
                 ),
               ),

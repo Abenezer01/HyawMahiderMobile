@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutx/flutx.dart';
-import 'package:http/http.dart' as http;
+import './stats/member/index.dart';
 import 'dart:convert';
 import 'package:hyaw_mahider/services/api-service.dart';
 import './add.dart';
@@ -67,6 +67,7 @@ class _AttendanceViewScreenState extends State<AttendanceViewScreen> {
               name: fullName,
               status: 'Status',
               attendanceData: attendance,
+              context: context,
             );
           },
         ),
@@ -86,7 +87,7 @@ class _AttendanceViewScreenState extends State<AttendanceViewScreen> {
   void _navigateToTakeAttendance() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => TakeAttendanceScreen()),
+      MaterialPageRoute(builder: (context) => const TakeAttendanceScreen()),
     );
   }
 }
@@ -98,10 +99,131 @@ Widget memberItem({
   required String status,
   required List<bool> attendanceData,
   bool isActive = false,
+  BuildContext? context,
 }) {
+  if (index >= attendanceData.length) {
+    return Container(); // Return an empty container if the index is out of range
+  }
+
+  final attendance = attendanceData[index];
   return Container(
     margin: FxSpacing.top(16),
     child: InkWell(
+      onTap: () {
+        Navigator.push(
+          context!,
+          MaterialPageRoute(
+            builder: (context) => MemberStatisticsPage(
+              memberName: name,
+              attendanceDates: [
+                DateTime(2023, 1, 2),
+                DateTime(2023, 1, 9),
+                DateTime(2023, 1, 16),
+                DateTime(2023, 1, 23),
+                DateTime(2023, 1, 30),
+                DateTime(2023, 2, 6),
+                DateTime(2023, 2, 13),
+                DateTime(2023, 2, 20),
+                DateTime(2023, 2, 27),
+                DateTime(2023, 3, 6),
+                DateTime(2023, 3, 13),
+                DateTime(2023, 3, 20),
+                DateTime(2023, 3, 27),
+                DateTime(2023, 4, 3),
+                DateTime(2023, 4, 10),
+                DateTime(2023, 4, 17),
+                DateTime(2023, 4, 24),
+                DateTime(2023, 5, 1),
+                DateTime(2023, 5, 8),
+                DateTime(2023, 5, 15),
+                DateTime(2023, 5, 22),
+                DateTime(2023, 5, 29),
+                DateTime(2023, 6, 5),
+                DateTime(2023, 6, 12),
+                DateTime(2023, 6, 19),
+                DateTime(2023, 6, 26),
+                DateTime(2023, 7, 3),
+                DateTime(2023, 7, 10),
+                DateTime(2023, 7, 17),
+                DateTime(2023, 7, 24),
+                DateTime(2023, 7, 31),
+                DateTime(2023, 8, 7),
+                DateTime(2023, 8, 14),
+                DateTime(2023, 8, 21),
+                DateTime(2023, 8, 28),
+                DateTime(2023, 9, 4),
+                DateTime(2023, 9, 11),
+                DateTime(2023, 9, 18),
+                DateTime(2023, 9, 25),
+                DateTime(2023, 10, 2),
+                DateTime(2023, 10, 9),
+                DateTime(2023, 10, 16),
+                DateTime(2023, 10, 23),
+                DateTime(2023, 10, 30),
+                DateTime(2023, 11, 6),
+                DateTime(2023, 11, 13),
+                DateTime(2023, 11, 20),
+                DateTime(2023, 11, 27),
+                DateTime(2023, 12, 4),
+                DateTime(2023, 12, 11),
+                DateTime(2023, 12, 18),
+                DateTime(2023, 12, 25),
+              ],
+              attendanceData: [
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+              ],
+            ),
+          ),
+        );
+      },
       child: Row(
         children: <Widget>[
           Stack(
@@ -179,4 +301,18 @@ Widget memberItem({
       ),
     ),
   );
+}
+
+List<DateTime> getAttendanceDates(List<bool> attendanceData) {
+  final now = DateTime.now();
+  final attendanceDates = <DateTime>[];
+
+  for (int i = 0; i < attendanceData.length; i++) {
+    final date = now.subtract(Duration(days: i));
+    if (attendanceData[i]) {
+      attendanceDates.add(date);
+    }
+  }
+
+  return attendanceDates;
 }

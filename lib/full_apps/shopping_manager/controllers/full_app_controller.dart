@@ -36,10 +36,10 @@ class FullAppController extends FxController {
     ];
 
     items = [
-      DashboardScreen(),
-      ProductsScreen(),
-      OrdersScreen(),
-      ProfileScreen(),
+      const DashboardScreen(),
+      const ProductsScreen(),
+      const OrdersScreen(),
+      const ProfileScreen(),
     ];
   }
 

@@ -52,7 +52,7 @@ class LoginController extends FxController {
   void goToRegisterScreen() {
     Navigator.of(context, rootNavigator: true).pushReplacement(
       MaterialPageRoute(
-        builder: (context) => RegisterScreen(),
+        builder: (context) => const RegisterScreen(),
       ),
     );
   }
@@ -60,7 +60,7 @@ class LoginController extends FxController {
   void goToForgotPasswordScreen() {
     Navigator.of(context, rootNavigator: true).pushReplacement(
       MaterialPageRoute(
-        builder: (context) => ForgotPasswordScreen(),
+        builder: (context) => const ForgotPasswordScreen(),
       ),
     );
   }
@@ -69,7 +69,7 @@ class LoginController extends FxController {
     if (formKey.currentState!.validate()) {
       Navigator.of(context, rootNavigator: true).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => RentalServiceFullApp(),
+          builder: (context) => const RentalServiceFullApp(),
         ),
       );
     }

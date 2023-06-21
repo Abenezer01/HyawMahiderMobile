@@ -57,7 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget profile() {
     return Row(
       children: [
-        FxContainer.rounded(
+        const FxContainer.rounded(
           height: 80,
           paddingAll: 0,
           child: Image(
@@ -161,7 +161,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ],
         ),
         FxSpacing.height(6),
-        Divider(),
+        const Divider(),
         FxSpacing.height(4),
       ],
     );
