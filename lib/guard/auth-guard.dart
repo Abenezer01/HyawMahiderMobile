@@ -20,7 +20,7 @@ class AuthGuard extends StatelessWidget {
           return child;
         } else {
           // If the user is not authenticated, redirect to the login screen
-          return child; // Replace with your own login screen
+          return LoginScreen(); // Replace with your own login screen
         }
       },
     );
