@@ -1,21 +1,75 @@
 import 'package:flutter/material.dart';
+import 'package:hyaw_mahider/Attendance/add.dart';
+import 'package:intl/intl.dart';
+import 'package:hyaw_mahider/services/api-service.dart';
+import 'dart:convert';
+import 'package:hyaw_mahider/models/member.dart';
 
-class MemberStatisticsPage extends StatelessWidget {
-  final String memberName;
-  final List<bool> attendanceData;
-  final List<DateTime> attendanceDates;
+class MemberStatisticsPage extends StatefulWidget {
+  final String memberId;
 
-  MemberStatisticsPage({
-    required this.memberName,
-    required this.attendanceData,
-    required this.attendanceDates,
+  const MemberStatisticsPage({
+    required this.memberId,
   });
+
+  @override
+  State<MemberStatisticsPage> createState() => _MemberStatisticsPageState();
+}
+
+class _MemberStatisticsPageState extends State<MemberStatisticsPage> {
+  Member member = {} as Member;
+  Future<List<bool?>> getSingleAttendance() async {
+    APIService apiService = APIService();
+    final data = await apiService.getData(
+      '/auth/members-module/attendance/get-member-attendance/year?year=2023&member_id=' +
+          widget.memberId,
+    );
+
+    Map<String, dynamic> response = json.decode(data);
+    List<dynamic> responseList = response['data'] as List<dynamic>;
+    Map<String, dynamic> memberProfile =
+        response['member'] as Map<String, dynamic>;
+
+    setState(() {
+      member = Member.fromMap(memberProfile);
+    });
+
+    List<bool?> attendanceList = [];
+    for (var value in responseList) {
+      if (value == null) {
+        attendanceList.add(null);
+      } else if (value is bool) {
+        attendanceList.add(value);
+      }
+    }
+
+    return attendanceList;
+  }
+
+  List<bool?> attendanceData = [];
+
+  @override
+  void initState() {
+    super.initState();
+    fetchAttendanceData();
+  }
+
+  Future<void> fetchAttendanceData() async {
+    try {
+      final data = await getSingleAttendance();
+      setState(() {
+        attendanceData = data;
+      });
+    } catch (error) {
+      print('Error fetching attendance data: $error');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(memberName),
+        title: Text('Member Attendance'),
       ),
       body: Container(
         padding: EdgeInsets.all(16.0),
@@ -33,18 +87,17 @@ class MemberStatisticsPage extends StatelessWidget {
                         crossAxisSpacing: 8.0, // Add spacing between columns
                         mainAxisSpacing: 8.0, // Add spacing between rows
                       ),
-                      itemCount: attendanceDates.length,
+                      itemCount: 52,
                       itemBuilder: (context, index) {
-                        final date = attendanceDates[index];
                         final attendanceIndex =
                             attendanceData.length > index ? index : 0;
                         final attendance = attendanceData[attendanceIndex];
-                        final weekNumber = getWeekNumber(date);
+                        final weekNumber = index + 1;
 
                         return Container(
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                            color: attendance
+                            color: attendance == true
                                 ? Colors.lightGreen
                                 : Colors.redAccent,
                             shape: BoxShape.rectangle,
@@ -67,13 +120,5 @@ class MemberStatisticsPage extends StatelessWidget {
               ),
       ),
     );
-  }
-
-  int getWeekNumber(DateTime date) {
-    final firstDayOfYear = DateTime(date.year, 1, 1);
-    final daysPassed = date.difference(firstDayOfYear).inDays;
-    final weekNumber = (daysPassed / 7).ceil();
-
-    return weekNumber;
   }
 }

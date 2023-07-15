@@ -48,9 +48,9 @@ class _HomesScreenState extends State<HomesScreen>
     navItems = [
       NavItem('Attendance', Images.animationDesignIcon, AttendanceViewScreen()),
       NavItem('Home', Images.app2Icon, ScreensHome()),
-      NavItem('Material Widgets', Images.materialDesignIcon,
-          MaterialWidgetsHome(), 32),
-      NavItem('Other Widgets', Images.otherDesignIcon, OthersHome()),
+      // NavItem('Material Widgets', Images.materialDesignIcon,
+      //     MaterialWidgetsHome(), 32),
+      // NavItem('Other Widgets', Images.otherDesignIcon, OthersHome()),
     ];
 
     tabController.addListener(() {

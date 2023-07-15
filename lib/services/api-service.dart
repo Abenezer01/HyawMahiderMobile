@@ -5,7 +5,9 @@ import 'dart:convert';
 class APIService {
   final baseUrl = dotenv.env['API_URL'] ?? 'API_URL not found';
 
-  Future<dynamic> getData(String endpoint) async {
+  Future<dynamic> getData(
+    String endpoint,
+  ) async {
     final response = await http.get(Uri.parse('$baseUrl/$endpoint'));
 
     if (response.statusCode == 200) {
