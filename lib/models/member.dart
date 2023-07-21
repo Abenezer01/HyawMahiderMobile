@@ -37,4 +37,8 @@ class Member {
       fullName: map['full_name'] ?? '',
     );
   }
+  @override
+  String toString() {
+    return 'Member: { id: $id, fullName: $fullName, ... }';
+  }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hyaw_mahider/Attendance/add.dart';
 import 'package:intl/intl.dart';
 import 'package:hyaw_mahider/services/api-service.dart';
 import 'dart:convert';
@@ -9,6 +8,7 @@ class MemberStatisticsPage extends StatefulWidget {
   final String memberId;
 
   const MemberStatisticsPage({
+    super.key,
     required this.memberId,
   });
 
@@ -17,41 +17,39 @@ class MemberStatisticsPage extends StatefulWidget {
 }
 
 class _MemberStatisticsPageState extends State<MemberStatisticsPage> {
-  Member member = {} as Member;
-  Future<List<bool?>> getSingleAttendance() async {
-    APIService apiService = APIService();
-    final data = await apiService.getData(
-      '/auth/members-module/attendance/get-member-attendance/year?year=2023&member_id=' +
-          widget.memberId,
-    );
-
-    Map<String, dynamic> response = json.decode(data);
-    List<dynamic> responseList = response['data'] as List<dynamic>;
-    Map<String, dynamic> memberProfile =
-        response['member'] as Map<String, dynamic>;
-
-    setState(() {
-      member = Member.fromMap(memberProfile);
-    });
-
-    List<bool?> attendanceList = [];
-    for (var value in responseList) {
-      if (value == null) {
-        attendanceList.add(null);
-      } else if (value is bool) {
-        attendanceList.add(value);
-      }
-    }
-
-    return attendanceList;
-  }
-
-  List<bool?> attendanceData = [];
-
+  late Member member;
+  List attendanceData = [];
   @override
   void initState() {
     super.initState();
     fetchAttendanceData();
+  }
+
+  Future<List<int?>> getSingleAttendance() async {
+    APIService apiService = APIService();
+    final data = await apiService.getData(
+      '/auth/members-module/attendance/get-member-attendance/year?year=2023&member_id=${widget.memberId}',
+    );
+
+    Map<String, dynamic> response = json.decode(data);
+    print(response);
+
+    List<dynamic> responseList = response['data'] as List<dynamic>;
+    Map<String, dynamic> memberProfile =
+        response['member'] as Map<String, dynamic>;
+    setState(() {
+      member = Member.fromMap(memberProfile);
+    });
+
+    List<int?> attendanceList = [];
+    for (var value in responseList) {
+      if (value == null) {
+        attendanceList.add(null);
+      } else if (value is int) {
+        attendanceList.add(value);
+      }
+    }
+    return attendanceList;
   }
 
   Future<void> fetchAttendanceData() async {
@@ -69,7 +67,7 @@ class _MemberStatisticsPageState extends State<MemberStatisticsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Member Attendance'),
+        title: Text(member.fullName, style: TextStyle(color: Colors.black)),
       ),
       body: Container(
         padding: EdgeInsets.all(16.0),
@@ -80,7 +78,8 @@ class _MemberStatisticsPageState extends State<MemberStatisticsPage> {
                   SizedBox(height: 16.0),
                   Expanded(
                     child: GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 10,
                         childAspectRatio:
                             1.0, // Set aspect ratio to make items square
@@ -93,13 +92,15 @@ class _MemberStatisticsPageState extends State<MemberStatisticsPage> {
                             attendanceData.length > index ? index : 0;
                         final attendance = attendanceData[attendanceIndex];
                         final weekNumber = index + 1;
-
+                        print('printing $attendanceData');
                         return Container(
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                            color: attendance == true
+                            color: attendance == 1
                                 ? Colors.lightGreen
-                                : Colors.redAccent,
+                                : attendance == 0
+                                    ? Colors.redAccent
+                                    : Colors.grey,
                             shape: BoxShape.rectangle,
                           ),
                           child: Text(
