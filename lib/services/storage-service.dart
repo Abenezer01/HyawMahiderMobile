@@ -10,11 +10,11 @@ class StorageService {
     return _instance;
   }
 
-  Future<void> setToken(String token, key) async {
+  Future<void> setItem(String token, key) async {
     await _storage.write(key: key, value: token);
   }
 
-  Future<String?> getToken(key) async {
+  Future<String?> getItem(key) async {
     return await _storage.read(key: key);
   }
 

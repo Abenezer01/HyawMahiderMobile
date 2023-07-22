@@ -2,6 +2,8 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'storage-service.dart';
+import 'package:hyaw_mahider/models/User.dart';
 
 class AuthService {
   static final AuthService _instance = AuthService._internal();
@@ -29,7 +31,6 @@ class AuthService {
   }
 
   Future<bool> login(String email, String password) async {
-    print(getToken());
     try {
       // Make an API request to your server for authentication
       // For example, using the http package
@@ -42,9 +43,15 @@ class AuthService {
         // Authentication successful
         // Extract the token from the response
         String token = json.decode(response.body)['token'];
-
         // Store the token securely
         await setToken(token);
+        final jsonData = jsonDecode(response.body);
+        final userJson = jsonData['user'];
+        final user = UserModel.fromMap(userJson as Map<String, dynamic>);
+
+        final jsonString = jsonEncode(user.toMap());
+
+        _storage.write(key: 'user', value: jsonString);
 
         return true;
       } else {
@@ -73,6 +80,8 @@ class AuthService {
   Future<bool> isLoggedIn() async {
     // Check if a token exists in secure storage
     String? token = await getToken();
+    final user = await _storage.read(key: 'user');
+    print('user $user');
     return token != null;
   }
 

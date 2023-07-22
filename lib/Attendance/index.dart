@@ -5,13 +5,24 @@ import 'dart:convert';
 import 'package:hyaw_mahider/services/api-service.dart';
 import './add.dart';
 import 'package:hyaw_mahider/models/member.dart';
+import 'package:hyaw_mahider/services/storage-service.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:hyaw_mahider/models/User.dart';
 
 class AttendanceService {
   static Future<List<Map<String, dynamic>>> fetchAttendanceData() async {
     try {
+      late UserModel user;
+      final FlutterSecureStorage _storage = FlutterSecureStorage();
+
+      final userData = await _storage.read(key: 'user');
+      user = UserModel.fromMap(jsonDecode(userData!) as Map<String, dynamic>);
+      print('user data ${userData}');
+
+      // final Map<String,dynamic>=storageService.getToken(key)
       final apiService = APIService();
       final data = await apiService.getData(
-          '/auth/members-module/attendance/853bcd28-df64-4826-9108-a97276ea5f40?limit=5');
+          '/auth/members-module/attendance/${user.smallTeamId}?limit=5');
       final parsedData = Map<String, dynamic>.from(jsonDecode(data));
       final attendanceData = parsedData['data'] as List<dynamic>;
 

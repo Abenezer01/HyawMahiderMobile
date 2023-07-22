@@ -18,6 +18,7 @@ class MemberStatisticsPage extends StatefulWidget {
 
 class _MemberStatisticsPageState extends State<MemberStatisticsPage> {
   late Member member;
+
   List attendanceData = [];
   @override
   void initState() {
@@ -32,7 +33,6 @@ class _MemberStatisticsPageState extends State<MemberStatisticsPage> {
     );
 
     Map<String, dynamic> response = json.decode(data);
-    print(response);
 
     List<dynamic> responseList = response['data'] as List<dynamic>;
     Map<String, dynamic> memberProfile =
