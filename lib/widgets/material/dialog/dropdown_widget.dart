@@ -40,68 +40,66 @@ class _DropdownWidgetState extends State<DropdownWidget> {
           title: FxText.titleMedium("Dropdown", fontWeight: 600),
         ),
         key: _scaffoldKey,
-        body: Container(
-          child: ListView(
-            padding: EdgeInsets.only(left: 24, right: 24, top: 0),
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  singleCartItem(
-                      image:
-                          './assets/images/apps/shopping/product/product-5.jpg',
-                      price: 39.99,
-                      name: 'Seeds',
-                      index: 0),
-                  singleCartItem(
-                      image:
-                          './assets/images/apps/shopping/product/product-7.jpg',
-                      price: 24.99,
-                      name: 'Forbes',
-                      index: 1),
-                  singleCartItem(
-                      image:
-                          './assets/images/apps/shopping/product/product-8.jpg',
-                      price: 12.99,
-                      name: 'Sandals',
-                      index: 2),
-                ],
-              ),
-              Divider(
-                height: 24,
-              ),
-              _CardBillWidget(),
-              Container(
-                margin: EdgeInsets.only(top: 24),
-                child: FxButton(
-                  elevation: 2,
-                  borderRadiusAll: 4,
-                  onPressed: () {},
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Center(
-                          child: FxText.titleMedium("\$ 449.89",
-                              letterSpacing: 0.3,
-                              color: theme.colorScheme.onPrimary),
-                        ),
+        body: ListView(
+          padding: EdgeInsets.only(left: 24, right: 24, top: 0),
+          children: <Widget>[
+            Column(
+              children: <Widget>[
+                singleCartItem(
+                    image:
+                        './assets/images/apps/shopping/product/product-5.jpg',
+                    price: 39.99,
+                    name: 'Seeds',
+                    index: 0),
+                singleCartItem(
+                    image:
+                        './assets/images/apps/shopping/product/product-7.jpg',
+                    price: 24.99,
+                    name: 'Forbes',
+                    index: 1),
+                singleCartItem(
+                    image:
+                        './assets/images/apps/shopping/product/product-8.jpg',
+                    price: 12.99,
+                    name: 'Sandals',
+                    index: 2),
+              ],
+            ),
+            Divider(
+              height: 24,
+            ),
+            _CardBillWidget(),
+            Container(
+              margin: EdgeInsets.only(top: 24),
+              child: FxButton(
+                elevation: 2,
+                borderRadiusAll: 4,
+                onPressed: () {},
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Center(
+                        child: FxText.titleMedium("\$ 449.89",
+                            letterSpacing: 0.3,
+                            color: theme.colorScheme.onPrimary),
                       ),
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: theme.colorScheme.primary,
-                            shape: BoxShape.circle),
-                        child: Icon(
-                          MdiIcons.cartArrowRight,
-                          color: theme.colorScheme.onPrimary,
-                          size: 18,
-                        ),
-                      )
-                    ],
-                  ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          color: theme.colorScheme.primary,
+                          shape: BoxShape.circle),
+                      child: Icon(
+                        MdiIcons.cartArrowRight,
+                        color: theme.colorScheme.onPrimary,
+                        size: 18,
+                      ),
+                    )
+                  ],
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ));
   }
 
@@ -138,53 +136,51 @@ class _DropdownWidgetState extends State<DropdownWidget> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Container(
-                        child: PopupMenuButton(
-                            key: simpleMenuKey,
-                            onSelected: (dynamic item) {
-                              setState(() {
-                                _cartQtyList[index] = item;
-                              });
-                            },
-                            itemBuilder: (BuildContext context) {
-                              return list.map((int option) {
-                                return PopupMenuItem(
-                                  value: option,
-                                  height: 36,
-                                  child: FxText.bodyMedium(option.toString(),
-                                      color: theme.colorScheme.onBackground),
-                                );
-                              }).toList();
-                            },
-                            color: theme.colorScheme.background,
-                            child: Container(
-                              padding: EdgeInsets.only(
-                                  left: 12, right: 12, top: 8, bottom: 8),
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)),
-                                color: customTheme.card,
-                                border: Border.all(
-                                    color: customTheme.border, width: 1),
-                              ),
-                              child: Row(
-                                children: <Widget>[
-                                  FxText.bodyLarge(
-                                    _cartQtyList[index].toString(),
+                      PopupMenuButton(
+                          key: simpleMenuKey,
+                          onSelected: (dynamic item) {
+                            setState(() {
+                              _cartQtyList[index] = item;
+                            });
+                          },
+                          itemBuilder: (BuildContext context) {
+                            return list.map((int option) {
+                              return PopupMenuItem(
+                                value: option,
+                                height: 36,
+                                child: FxText.bodyMedium(option.toString(),
+                                    color: theme.colorScheme.onBackground),
+                              );
+                            }).toList();
+                          },
+                          color: theme.colorScheme.background,
+                          child: Container(
+                            padding: EdgeInsets.only(
+                                left: 12, right: 12, top: 8, bottom: 8),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8)),
+                              color: customTheme.card,
+                              border: Border.all(
+                                  color: customTheme.border, width: 1),
+                            ),
+                            child: Row(
+                              children: <Widget>[
+                                FxText.bodyLarge(
+                                  _cartQtyList[index].toString(),
+                                  color: theme.colorScheme.onBackground,
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(left: 4),
+                                  child: Icon(
+                                    MdiIcons.chevronDown,
+                                    size: 22,
                                     color: theme.colorScheme.onBackground,
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(left: 4),
-                                    child: Icon(
-                                      MdiIcons.chevronDown,
-                                      size: 22,
-                                      color: theme.colorScheme.onBackground,
-                                    ),
-                                  )
-                                ],
-                              ),
-                            )),
-                      ),
+                                )
+                              ],
+                            ),
+                          )),
                       FxText.bodyLarge("\$$price",
                           color: theme.colorScheme.onBackground,
                           letterSpacing: 0)

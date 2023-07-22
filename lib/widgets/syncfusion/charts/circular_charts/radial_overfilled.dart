@@ -51,26 +51,25 @@ class _RadialOverfilledState extends State<RadialOverfilled> {
             radius: '0%',
             height: '45%',
             width: '65%',
-            widget: Container(
-              child: Column(
-                children: const <Widget>[
-                  Text('Goal -',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                  Padding(padding: EdgeInsets.only(top: 10)),
-                  Text('6k steps/day',
-                      softWrap: false,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 14))
-                ],
-              ),
+            widget: Column(
+              children: const <Widget>[
+                Text('Goal -',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                Padding(padding: EdgeInsets.only(top: 10)),
+                Text('6k steps/day',
+                    softWrap: false,
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 14))
+              ],
             ),
           ),
         ],
         series: _getRadialBarSeries(),
         tooltipBehavior: _tooltipBehavior,
         onTooltipRender: (TooltipArgs args) {
-          args.text = '${chartData[args.pointIndex as int].text} : ${chartData[args.pointIndex as int].y}';
+          args.text =
+              '${chartData[args.pointIndex as int].text} : ${chartData[args.pointIndex as int].y}';
         });
   }
 

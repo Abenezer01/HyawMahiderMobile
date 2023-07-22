@@ -43,10 +43,8 @@ class _CupertinoDateTimePickerWidgetState
         ),
         body: Container(
             color: theme.colorScheme.background,
-            child: Container(
-              child: CupertinoDatePicker(
-                  mode: CupertinoDatePickerMode.dateAndTime,
-                  onDateTimeChanged: (dateTime) {}),
-            )));
+            child: CupertinoDatePicker(
+                mode: CupertinoDatePickerMode.dateAndTime,
+                onDateTimeChanged: (dateTime) {})));
   }
 }

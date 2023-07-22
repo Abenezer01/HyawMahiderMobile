@@ -108,183 +108,179 @@ class _PositionedFABState extends State<PositionedFAB> {
             height: 70,
           ),
         ),
-        body: Container(
-          child: Container(
-            child: Column(
-              children: <Widget>[
-                GestureDetector(
-                  onTap: () {
-                    _handleValueChange(fabEndDocked);
-                  },
-                  child: Container(
-                    margin: FxSpacing.fromLTRB(16, 16, 16, 8),
-                    child: Row(
-                      children: <Widget>[
-                        Radio(
-                          onChanged: (dynamic value) {
-                            _handleValueChange(fabEndDocked);
-                          },
-                          groupValue: _radioValue,
-                          value: fabEndDocked,
-                          activeColor: theme.colorScheme.primary,
-                        ),
-                        FxText.titleSmall(
-                          "End Docked",
-                          color: theme.colorScheme.onBackground,
-                          letterSpacing: 0.15,
-                          fontWeight: 500,
-                        ),
-                      ],
+        body: Column(
+          children: <Widget>[
+            GestureDetector(
+              onTap: () {
+                _handleValueChange(fabEndDocked);
+              },
+              child: Container(
+                margin: FxSpacing.fromLTRB(16, 16, 16, 8),
+                child: Row(
+                  children: <Widget>[
+                    Radio(
+                      onChanged: (dynamic value) {
+                        _handleValueChange(fabEndDocked);
+                      },
+                      groupValue: _radioValue,
+                      value: fabEndDocked,
+                      activeColor: theme.colorScheme.primary,
                     ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    _handleValueChange(fabEndFloat);
-                  },
-                  child: Container(
-                    margin: FxSpacing.xy(16, 8),
-                    child: Row(
-                      children: <Widget>[
-                        Radio(
-                          onChanged: (dynamic value) {
-                            _handleValueChange(fabEndFloat);
-                          },
-                          groupValue: _radioValue,
-                          value: fabEndFloat,
-                          activeColor: theme.colorScheme.primary,
-                        ),
-                        FxText.titleSmall("End Float",
-                            color: theme.colorScheme.onBackground,
-                            letterSpacing: 0.15,
-                            fontWeight: 500),
-                      ],
+                    FxText.titleSmall(
+                      "End Docked",
+                      color: theme.colorScheme.onBackground,
+                      letterSpacing: 0.15,
+                      fontWeight: 500,
                     ),
-                  ),
+                  ],
                 ),
-                GestureDetector(
-                  onTap: () {
-                    _handleValueChange(fabCenterDocked);
-                  },
-                  child: Container(
-                    margin: FxSpacing.xy(16, 8),
-                    child: Row(
-                      children: <Widget>[
-                        Radio(
-                          onChanged: (dynamic value) {
-                            _handleValueChange(fabCenterDocked);
-                          },
-                          groupValue: _radioValue,
-                          value: fabCenterDocked,
-                          activeColor: theme.colorScheme.primary,
-                        ),
-                        FxText.titleSmall("Center Docked",
-                            color: theme.colorScheme.onBackground,
-                            letterSpacing: 0.15,
-                            fontWeight: 500),
-                      ],
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    _handleValueChange(fabCenterFloat);
-                  },
-                  child: Container(
-                    margin: FxSpacing.xy(16, 8),
-                    child: Row(
-                      children: <Widget>[
-                        Radio(
-                          onChanged: (dynamic value) {
-                            _handleValueChange(fabCenterFloat);
-                          },
-                          groupValue: _radioValue,
-                          value: fabCenterFloat,
-                          activeColor: theme.colorScheme.primary,
-                        ),
-                        FxText.titleSmall("Center Float",
-                            color: theme.colorScheme.onBackground,
-                            letterSpacing: 0.15,
-                            fontWeight: 500),
-                      ],
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    _handleValueChange(fabEndTop);
-                  },
-                  child: Container(
-                    margin: FxSpacing.xy(16, 8),
-                    child: Row(
-                      children: <Widget>[
-                        Radio(
-                          onChanged: (dynamic value) {
-                            _handleValueChange(fabEndTop);
-                          },
-                          groupValue: _radioValue,
-                          value: fabEndTop,
-                          activeColor: theme.colorScheme.primary,
-                        ),
-                        FxText.titleSmall("End Top",
-                            color: theme.colorScheme.onBackground,
-                            letterSpacing: 0.15,
-                            fontWeight: 500),
-                      ],
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    _handleValueChange(fabMiniStartTop);
-                  },
-                  child: Container(
-                    margin: FxSpacing.xy(16, 8),
-                    child: Row(
-                      children: <Widget>[
-                        Radio(
-                          onChanged: (dynamic value) {
-                            _handleValueChange(fabMiniStartTop);
-                          },
-                          groupValue: _radioValue,
-                          value: fabMiniStartTop,
-                          activeColor: theme.colorScheme.primary,
-                        ),
-                        FxText.titleSmall("Mini Top",
-                            color: theme.colorScheme.onBackground,
-                            letterSpacing: 0.15,
-                            fontWeight: 500),
-                      ],
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    _handleValueChange(fabStartTop);
-                  },
-                  child: Container(
-                    margin: FxSpacing.xy(16, 8),
-                    child: Row(
-                      children: <Widget>[
-                        Radio(
-                          onChanged: (dynamic value) {
-                            _handleValueChange(fabStartTop);
-                          },
-                          groupValue: _radioValue,
-                          value: fabStartTop,
-                          activeColor: theme.colorScheme.primary,
-                        ),
-                        FxText.titleSmall("Start Top",
-                            color: theme.colorScheme.onBackground,
-                            letterSpacing: 0.15,
-                            fontWeight: 500),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
-          ),
+            GestureDetector(
+              onTap: () {
+                _handleValueChange(fabEndFloat);
+              },
+              child: Container(
+                margin: FxSpacing.xy(16, 8),
+                child: Row(
+                  children: <Widget>[
+                    Radio(
+                      onChanged: (dynamic value) {
+                        _handleValueChange(fabEndFloat);
+                      },
+                      groupValue: _radioValue,
+                      value: fabEndFloat,
+                      activeColor: theme.colorScheme.primary,
+                    ),
+                    FxText.titleSmall("End Float",
+                        color: theme.colorScheme.onBackground,
+                        letterSpacing: 0.15,
+                        fontWeight: 500),
+                  ],
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                _handleValueChange(fabCenterDocked);
+              },
+              child: Container(
+                margin: FxSpacing.xy(16, 8),
+                child: Row(
+                  children: <Widget>[
+                    Radio(
+                      onChanged: (dynamic value) {
+                        _handleValueChange(fabCenterDocked);
+                      },
+                      groupValue: _radioValue,
+                      value: fabCenterDocked,
+                      activeColor: theme.colorScheme.primary,
+                    ),
+                    FxText.titleSmall("Center Docked",
+                        color: theme.colorScheme.onBackground,
+                        letterSpacing: 0.15,
+                        fontWeight: 500),
+                  ],
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                _handleValueChange(fabCenterFloat);
+              },
+              child: Container(
+                margin: FxSpacing.xy(16, 8),
+                child: Row(
+                  children: <Widget>[
+                    Radio(
+                      onChanged: (dynamic value) {
+                        _handleValueChange(fabCenterFloat);
+                      },
+                      groupValue: _radioValue,
+                      value: fabCenterFloat,
+                      activeColor: theme.colorScheme.primary,
+                    ),
+                    FxText.titleSmall("Center Float",
+                        color: theme.colorScheme.onBackground,
+                        letterSpacing: 0.15,
+                        fontWeight: 500),
+                  ],
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                _handleValueChange(fabEndTop);
+              },
+              child: Container(
+                margin: FxSpacing.xy(16, 8),
+                child: Row(
+                  children: <Widget>[
+                    Radio(
+                      onChanged: (dynamic value) {
+                        _handleValueChange(fabEndTop);
+                      },
+                      groupValue: _radioValue,
+                      value: fabEndTop,
+                      activeColor: theme.colorScheme.primary,
+                    ),
+                    FxText.titleSmall("End Top",
+                        color: theme.colorScheme.onBackground,
+                        letterSpacing: 0.15,
+                        fontWeight: 500),
+                  ],
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                _handleValueChange(fabMiniStartTop);
+              },
+              child: Container(
+                margin: FxSpacing.xy(16, 8),
+                child: Row(
+                  children: <Widget>[
+                    Radio(
+                      onChanged: (dynamic value) {
+                        _handleValueChange(fabMiniStartTop);
+                      },
+                      groupValue: _radioValue,
+                      value: fabMiniStartTop,
+                      activeColor: theme.colorScheme.primary,
+                    ),
+                    FxText.titleSmall("Mini Top",
+                        color: theme.colorScheme.onBackground,
+                        letterSpacing: 0.15,
+                        fontWeight: 500),
+                  ],
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                _handleValueChange(fabStartTop);
+              },
+              child: Container(
+                margin: FxSpacing.xy(16, 8),
+                child: Row(
+                  children: <Widget>[
+                    Radio(
+                      onChanged: (dynamic value) {
+                        _handleValueChange(fabStartTop);
+                      },
+                      groupValue: _radioValue,
+                      value: fabStartTop,
+                      activeColor: theme.colorScheme.primary,
+                    ),
+                    FxText.titleSmall("Start Top",
+                        color: theme.colorScheme.onBackground,
+                        letterSpacing: 0.15,
+                        fontWeight: 500),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ));
   }
 }

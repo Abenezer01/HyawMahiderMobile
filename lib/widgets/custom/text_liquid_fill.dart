@@ -114,9 +114,9 @@ class _TextLiquidFillState extends State<TextLiquidFill>
           width: _boxWidth ?? MediaQuery.of(context).size.width,
           child: ShaderMask(
             blendMode: BlendMode.srcOut,
-            shaderCallback: (bounds) =>
-                LinearGradient(colors: [_boxBackgroundColor!], stops: const [0.0])
-                    .createShader(bounds),
+            shaderCallback: (bounds) => LinearGradient(
+                colors: [_boxBackgroundColor!],
+                stops: const [0.0]).createShader(bounds),
             child: Container(
               color: Colors.transparent,
               child: Center(

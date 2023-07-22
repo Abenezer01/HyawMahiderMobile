@@ -165,8 +165,7 @@ class _RangeSelectorScreenState extends State<RangeSelectorScreen> {
               child: SizedBox(
                 height: 25,
                 child: Text(
-                  'Average rate   :   ${_getAverageInflationRate(rangeController)
-                          .toStringAsFixed(2)}%',
+                  'Average rate   :   ${_getAverageInflationRate(rangeController).toStringAsFixed(2)}%',
                   style: const TextStyle(fontSize: 18),
                 ),
               ),

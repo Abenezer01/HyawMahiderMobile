@@ -70,23 +70,20 @@ class _TemperatureGaugeState extends State<TemperatureGauge> {
                   endWidth: 0.265,
                   color: const Color.fromRGBO(238, 79, 34, 0.65)),
             ],
-            annotations: <GaugeAnnotation>[
+            annotations: const <GaugeAnnotation>[
               GaugeAnnotation(
                   angle: 90,
                   positionFactor: 0.35,
-                  widget: Container(
-                      child: const Text('Temp.°C',
-                          style: TextStyle(
-                              color: Color(0xFFF8B195), fontSize: 16)))),
+                  widget: Text('Temp.°C',
+                      style: TextStyle(
+                          color: Color(0xFFF8B195), fontSize: 16))),
               GaugeAnnotation(
                   angle: 90,
                   positionFactor: 0.8,
-                  widget: Container(
-                    child: const Text(
-                      '  22.5  ',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                    ),
+                  widget: Text(
+                    '  22.5  ',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ))
             ],
             pointers: const <GaugePointer>[

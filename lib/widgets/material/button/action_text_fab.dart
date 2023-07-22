@@ -56,9 +56,7 @@ class _ActionTextFABState extends State<ActionTextFAB>
   _generateGridItems() {
     List<Widget> list = [];
     for (int i = 0; i < 32; i++) {
-      list.add(Container(
-        child: Image(image: AssetImage(_imageList[i % 14]), fit: BoxFit.fill),
-      ));
+      list.add(Image(image: AssetImage(_imageList[i % 14]), fit: BoxFit.fill));
     }
     return list;
   }

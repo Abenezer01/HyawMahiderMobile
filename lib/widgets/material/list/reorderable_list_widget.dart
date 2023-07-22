@@ -77,7 +77,7 @@ class _ReorderableListWidgetState extends State<ReorderableListWidget> {
               return ListViewCard(
                 alphabetList,
                 index,
-                Key('$index'),
+                key: Key('$index'),
               );
             },
           ),
@@ -87,11 +87,10 @@ class _ReorderableListWidgetState extends State<ReorderableListWidget> {
 
 class ListViewCard extends StatefulWidget {
   final int index;
-  @override
-  final Key key;
+
   final List<String> listItems;
 
-  ListViewCard(this.listItems, this.index, this.key);
+  ListViewCard(this.listItems, this.index, {super.key});
 
   @override
   _ListViewCard createState() => _ListViewCard();

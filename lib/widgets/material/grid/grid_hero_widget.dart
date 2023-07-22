@@ -51,12 +51,10 @@ class _GridHeroWidgetState extends State<GridHeroWidget> {
         onTap: () {
           _showFullImage(_imageList[i % 14], 'imageTag-$i');
         },
-        child: Container(
-          child: Hero(
-              tag: 'imageTag-$i',
-              child: Image(
-                  image: AssetImage(_imageList[i % 14]), fit: BoxFit.fill)),
-        ),
+        child: Hero(
+            tag: 'imageTag-$i',
+            child:
+                Image(image: AssetImage(_imageList[i % 14]), fit: BoxFit.fill)),
       ));
     }
     return list;

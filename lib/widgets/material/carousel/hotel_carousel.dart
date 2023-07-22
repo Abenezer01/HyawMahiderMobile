@@ -3,10 +3,10 @@
 * Version : 1.0.0
 * */
 
-import 'package:flutter/material.dart';
-import 'package:flutx/flutx.dart';
 import 'package:hyaw_mahider/images.dart';
 import 'package:hyaw_mahider/theme/app_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutx/flutx.dart';
 
 class HotelCarousel extends StatefulWidget {
   @override
@@ -64,31 +64,29 @@ class _HotelCarouselState extends State<HotelCarousel> {
         body: Column(
       children: <Widget>[
         Expanded(
-          child: Container(
-            child: PageView(
-              pageSnapping: true,
-              physics: ClampingScrollPhysics(),
-              controller: _pageController,
-              onPageChanged: (int page) {
-                setState(() {
-                  _currentPage = page;
-                });
-              },
-              children: <Widget>[
-                _SingleHotelPage(
-                  image: Images.places[0],
-                  name: 'Cuba',
-                ),
-                _SingleHotelPage(
-                  name: 'London',
-                  image: Images.places[1],
-                ),
-                _SingleHotelPage(
-                  image: Images.places[2],
-                  name: 'Paris',
-                ),
-              ],
-            ),
+          child: PageView(
+            pageSnapping: true,
+            physics: ClampingScrollPhysics(),
+            controller: _pageController,
+            onPageChanged: (int page) {
+              setState(() {
+                _currentPage = page;
+              });
+            },
+            children: <Widget>[
+              _SingleHotelPage(
+                image: Images.places[0],
+                name: 'Cuba',
+              ),
+              _SingleHotelPage(
+                name: 'London',
+                image: Images.places[1],
+              ),
+              _SingleHotelPage(
+                image: Images.places[2],
+                name: 'Paris',
+              ),
+            ],
           ),
         ),
         Container(

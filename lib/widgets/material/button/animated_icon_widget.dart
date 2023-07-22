@@ -53,10 +53,7 @@ class _AnimatedIconWidgetState extends State<AnimatedIconWidget> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Container(
-                        child:
-                            FxText.titleSmall("Animated Icon", fontWeight: 600),
-                      ),
+                      FxText.titleSmall("Animated Icon", fontWeight: 600),
                       Container(
                         margin: EdgeInsets.only(top: 8),
                         child: Row(
@@ -249,41 +246,39 @@ class _SingleAnimatedIconState extends State<SingleAnimatedIcon>
   @override
   Widget build(BuildContext context) {
     theme = Theme.of(context);
-    return Container(
-      child: ClipOval(
-        child: Material(
-          color: widget.isBackground
-              ? theme.primaryColor.withAlpha(20)
-              : Colors.transparent, // button color
-          child: InkWell(
-            splashColor: theme.colorScheme.primary,
-            // inkwell color
-            child: SizedBox(
-                width: 44,
-                height: 44,
-                child: IconButton(
-                  iconSize: 24,
-                  icon: AnimatedIcon(
-                    icon: widget.animatedIconData,
-                    progress: _animationController,
-                    color: theme.colorScheme.primary,
-                  ),
-                  onPressed: () {
-                    if (isPlaying) {
-                      _animationController.reverse();
-                      setState(() {
-                        isPlaying = false;
-                      });
-                    } else {
-                      _animationController.forward();
-                      setState(() {
-                        isPlaying = true;
-                      });
-                    }
-                  },
-                )),
-            onTap: () {},
-          ),
+    return ClipOval(
+      child: Material(
+        color: widget.isBackground
+            ? theme.primaryColor.withAlpha(20)
+            : Colors.transparent, // button color
+        child: InkWell(
+          splashColor: theme.colorScheme.primary,
+          // inkwell color
+          child: SizedBox(
+              width: 44,
+              height: 44,
+              child: IconButton(
+                iconSize: 24,
+                icon: AnimatedIcon(
+                  icon: widget.animatedIconData,
+                  progress: _animationController,
+                  color: theme.colorScheme.primary,
+                ),
+                onPressed: () {
+                  if (isPlaying) {
+                    _animationController.reverse();
+                    setState(() {
+                      isPlaying = false;
+                    });
+                  } else {
+                    _animationController.forward();
+                    setState(() {
+                      isPlaying = true;
+                    });
+                  }
+                },
+              )),
+          onTap: () {},
         ),
       ),
     );

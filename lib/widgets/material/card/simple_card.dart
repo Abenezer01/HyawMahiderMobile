@@ -1,5 +1,5 @@
 /*
-* File : Simple Card 
+* File : Simple Card
 * Version : 1.0.0
 * */
 
@@ -29,8 +29,7 @@ class _SimpleCardScreenState extends State<SimpleCardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-            child: ListView(
+        body: ListView(
       padding: FxSpacing.all(0),
       children: <Widget>[
         Container(
@@ -66,7 +65,7 @@ class _SimpleCardScreenState extends State<SimpleCardScreen> {
               elevation: _elevation,
             )),
       ],
-    )));
+    ));
   }
 }
 
@@ -149,44 +148,42 @@ class _CircularCardState extends State<_CircularCard> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16.0),
       ),
-      child: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Image(
-              image: AssetImage(Images.profileBanner),
-              height: 180,
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.fill,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Image(
+            image: AssetImage(Images.profileBanner),
+            height: 180,
+            width: MediaQuery.of(context).size.width,
+            fit: BoxFit.fill,
+          ),
+          Container(
+            padding: FxSpacing.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    FxText.titleMedium("Title", fontWeight: 600),
+                    FxText.bodyMedium(
+                        "Lorem ipsum, or lipsum as it is sometimes known",
+                        height: 1.2,
+                        fontWeight: 500),
+                    Container(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                          onPressed: () {},
+                          child: FxText.labelMedium("ACTION",
+                              fontWeight: 600,
+                              color: theme.colorScheme.primary)),
+                    )
+                  ],
+                ),
+              ],
             ),
-            Container(
-              padding: FxSpacing.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      FxText.titleMedium("Title", fontWeight: 600),
-                      FxText.bodyMedium(
-                          "Lorem ipsum, or lipsum as it is sometimes known",
-                          height: 1.2,
-                          fontWeight: 500),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                            onPressed: () {},
-                            child: FxText.labelMedium("ACTION",
-                                fontWeight: 600,
-                                color: theme.colorScheme.primary)),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

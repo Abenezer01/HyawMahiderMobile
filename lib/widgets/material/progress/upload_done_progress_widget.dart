@@ -98,13 +98,11 @@ class _UploadDoneProgressWidgetState extends State<UploadDoneProgressWidget>
                 ? Row(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Container(
-                        child: CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation<Color>(
-                            theme.colorScheme.primary,
-                          ),
-                          value: animation.value,
+                      CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          theme.colorScheme.primary,
                         ),
+                        value: animation.value,
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 16),

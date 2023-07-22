@@ -1,6 +1,6 @@
 class Images {
   ///----------------- Brand -----------------------------------//
-  static String brandLogo = 'assets/brand/hyaw_mahider.png';
+  static String brandLogo = 'assets/brand/flutkit.png';
 
   ///----------------- Profile Images ------------------------------//
   static String profile1 = 'assets/images/profiles/avatar_1.jpg';

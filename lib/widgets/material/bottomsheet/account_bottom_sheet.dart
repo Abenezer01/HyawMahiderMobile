@@ -1,5 +1,5 @@
 /*
-* File : Account Choose Bottom Sheet 
+* File : Account Choose Bottom Sheet
 * Version : 1.0.0
 * */
 
@@ -29,61 +29,57 @@ class _AccountBottomSheetState extends State<AccountBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-          Container(
-            margin: FxSpacing.all(16),
-            child: Card(
-              elevation: 2,
-              child: Padding(
-                padding: FxSpacing.xy(12, 6),
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      flex: 1,
-                      child: Padding(
-                        padding: FxSpacing.right(8),
-                        child: Container(
-                          child: TextField(
-                            autofocus: false,
-                            decoration: InputDecoration(
-                                hintText: "Tap on account image",
-                                hintStyle: FxTextStyle.bodyMedium(),
-                                border: InputBorder.none,
-                                focusedBorder: InputBorder.none,
-                                enabledBorder: InputBorder.none,
-                                disabledBorder: InputBorder.none,
-                                errorBorder: InputBorder.none,
-                                focusedErrorBorder: InputBorder.none,
-                                isDense: true),
-                          ),
-                        ),
+        body: Column(
+      mainAxisSize: MainAxisSize.max,
+      children: <Widget>[
+        Container(
+          margin: FxSpacing.all(16),
+          child: Card(
+            elevation: 2,
+            child: Padding(
+              padding: FxSpacing.xy(12, 6),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    flex: 1,
+                    child: Padding(
+                      padding: FxSpacing.right(8),
+                      child: TextField(
+                        autofocus: false,
+                        decoration: InputDecoration(
+                            hintText: "Tap on account image",
+                            hintStyle: FxTextStyle.bodyMedium(),
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            disabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            focusedErrorBorder: InputBorder.none,
+                            isDense: true),
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        _showBottomSheet(context);
-                      },
-                      child: Container(
-                        width: 36,
-                        height: 36,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: AssetImage(Images.profile1),
-                              fit: BoxFit.fill),
-                        ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      _showBottomSheet(context);
+                    },
+                    child: Container(
+                      width: 36,
+                      height: 36,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage(Images.profile1),
+                            fit: BoxFit.fill),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-          )
-        ],
-      ),
+          ),
+        )
+      ],
     ));
   }
 

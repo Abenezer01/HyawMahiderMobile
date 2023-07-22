@@ -72,39 +72,35 @@ class _GalleryBottomSheetWidgetState extends State<GalleryBottomSheetWidget> {
           ),
           title: FxText.titleMedium("Gallery", fontWeight: 600),
         ),
-        body: Container(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                color: theme.appBarTheme.backgroundColor,
-                child: Row(
-                  children: <Widget>[
-                    Icon(
-                      MdiIcons.informationOutline,
+        body: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              color: theme.appBarTheme.backgroundColor,
+              child: Row(
+                children: <Widget>[
+                  Icon(
+                    MdiIcons.informationOutline,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 8),
+                    child: FxText.titleSmall(
+                      "Tap on any image",
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 8),
-                      child: FxText.titleSmall(
-                        "Tap on any image",
-                      ),
-                    )
-                  ],
-                ),
+                  )
+                ],
               ),
-              Expanded(
-                child: Container(
-                  child: GridView.count(
-                      crossAxisCount: 2,
-                      padding: EdgeInsets.all(16),
-                      mainAxisSpacing: 16,
-                      crossAxisSpacing: 16,
-                      children: _generateGridItems()),
-                ),
-              )
-            ],
-          ),
+            ),
+            Expanded(
+              child: GridView.count(
+                  crossAxisCount: 2,
+                  padding: EdgeInsets.all(16),
+                  mainAxisSpacing: 16,
+                  crossAxisSpacing: 16,
+                  children: _generateGridItems()),
+            )
+          ],
         ));
   }
 

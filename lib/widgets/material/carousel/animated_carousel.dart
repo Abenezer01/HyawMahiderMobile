@@ -81,66 +81,62 @@ class _AnimatedCarouselState extends State<AnimatedCarousel>
         body: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Container(
-          child: Stack(
-            alignment: AlignmentDirectional.center,
-            children: <Widget>[
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.3,
-                child: PageView(
-                  pageSnapping: true,
-                  physics: ClampingScrollPhysics(),
-                  controller: _pageController,
-                  onPageChanged: (int page) {
-                    setState(() {
-                      _currentPage = page;
-                    });
-                  },
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(right: 0),
-                      child: Image.asset(
-                        Images.landscapes[0],
-                        height: 240.0,
-                        fit: BoxFit.fill,
-                      ),
+        Stack(
+          alignment: AlignmentDirectional.center,
+          children: <Widget>[
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.3,
+              child: PageView(
+                pageSnapping: true,
+                physics: ClampingScrollPhysics(),
+                controller: _pageController,
+                onPageChanged: (int page) {
+                  setState(() {
+                    _currentPage = page;
+                  });
+                },
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(right: 0),
+                    child: Image.asset(
+                      Images.landscapes[0],
+                      height: 240.0,
+                      fit: BoxFit.fill,
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(0.0),
-                      child: Image.asset(
-                        Images.landscapes[1],
-                        height: 240.0,
-                        fit: BoxFit.fill,
-                      ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(0.0),
+                    child: Image.asset(
+                      Images.landscapes[1],
+                      height: 240.0,
+                      fit: BoxFit.fill,
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(0.0),
-                      child: Image.asset(
-                        Images.landscapes[2],
-                        height: 240.0,
-                        fit: BoxFit.fill,
-                      ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(0.0),
+                    child: Image.asset(
+                      Images.landscapes[2],
+                      height: 240.0,
+                      fit: BoxFit.fill,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Positioned(
-                bottom: 10,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: _buildPageIndicatorAnimated(),
-                ),
+            ),
+            Positioned(
+              bottom: 10,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: _buildPageIndicatorAnimated(),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
         Expanded(
           flex: 1,
-          child: Container(
-            child: Center(
-              child: FxText.titleMedium("Body content",
-                  color: theme.colorScheme.onBackground, letterSpacing: 0.3),
-            ),
+          child: Center(
+            child: FxText.titleMedium("Body content",
+                color: theme.colorScheme.onBackground, letterSpacing: 0.3),
           ),
         ),
       ],

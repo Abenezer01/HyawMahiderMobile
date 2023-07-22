@@ -116,14 +116,12 @@ class _InternetCheckDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              child: Center(
-                  child: Icon(
-                Icons.signal_wifi_off_outlined,
-                size: 40,
-                color: themeData.colorScheme.onBackground.withAlpha(220),
-              )),
-            ),
+            Center(
+                child: Icon(
+              Icons.signal_wifi_off_outlined,
+              size: 40,
+              color: themeData.colorScheme.onBackground.withAlpha(220),
+            )),
             Container(
               margin: FxSpacing.top(16),
               child: Center(

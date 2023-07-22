@@ -41,10 +41,9 @@ class _CupertinoButtonWidgetState extends State<CupertinoButtonWidget> {
         ),
         body: Padding(
             padding: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
-            child: Container(
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
                   Padding(
                     padding: EdgeInsets.all(8),
                     child: Column(
@@ -87,6 +86,6 @@ class _CupertinoButtonWidgetState extends State<CupertinoButtonWidget> {
                       ],
                     ),
                   )
-                ]))));
+                ])));
   }
 }

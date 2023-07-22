@@ -69,40 +69,37 @@ class _AnimatedSwitcherWidgetState extends State<AnimatedSwitcherWidget> {
           ),
           title: FxText.titleMedium("Animated Switcher", fontWeight: 600),
         ),
-        body: Container(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 800),
-                  transitionBuilder:
-                      (Widget child, Animation<double> animation) {
-                    return ScaleTransition(scale: animation, child: child);
-                  },
-                  child: FxText.headlineMedium(
-                    '$_count',
-                    key: ValueKey<int>(_count),
-                  ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 800),
+                transitionBuilder: (Widget child, Animation<double> animation) {
+                  return ScaleTransition(scale: animation, child: child);
+                },
+                child: FxText.headlineMedium(
+                  '$_count',
+                  key: ValueKey<int>(_count),
                 ),
-                ElevatedButton(
-                    onPressed: () {
-                      if (isPlaying) {
-                        setState(() {
-                          isPlaying = false;
-                          _timer!.cancel();
-                        });
-                      } else {
-                        setState(() {
-                          isPlaying = true;
-                          startTimer();
-                        });
-                      }
-                    },
-                    child: FxText.bodyMedium(isPlaying ? "Pause" : "Play",
-                        fontWeight: 600, color: theme.colorScheme.onPrimary)),
-              ],
-            ),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    if (isPlaying) {
+                      setState(() {
+                        isPlaying = false;
+                        _timer!.cancel();
+                      });
+                    } else {
+                      setState(() {
+                        isPlaying = true;
+                        startTimer();
+                      });
+                    }
+                  },
+                  child: FxText.bodyMedium(isPlaying ? "Pause" : "Play",
+                      fontWeight: 600, color: theme.colorScheme.onPrimary)),
+            ],
           ),
         ));
   }

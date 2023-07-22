@@ -42,67 +42,65 @@ class _SelectableListWidgetState extends State<SelectableListWidget> {
           ),
           title: FxText.titleMedium("Selectable List", fontWeight: 600),
         ),
-        body: Container(
-          child: ListView.separated(
-              itemCount: _list.length,
-              itemBuilder: (context, index) {
-                return Ink(
-                  color: _selected[index]
-                      ? theme.colorScheme.primary
-                      : theme.colorScheme.background,
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: _selected[index]
-                          ? theme.colorScheme.secondary
-                          : theme.colorScheme.secondary.withAlpha(240),
-                      child: _selected[index]
-                          ? Icon(
-                              Icons.done,
-                              color: theme.colorScheme.onSecondary,
-                            )
-                          : FxText.bodyLarge(_list[index].toString(),
-                              fontWeight: 600,
-                              color: _selected[index]
-                                  ? theme.colorScheme.onPrimary
-                                  : theme.colorScheme.onSecondary),
-                    ),
-                    subtitle: FxText.bodyMedium('Sub Item',
-                        fontWeight: 500,
-                        color: _selected[index]
-                            ? theme.colorScheme.onPrimary
-                            : theme.colorScheme.onBackground),
-                    title: FxText.bodyLarge('Item - ${_list[index]}',
-                        fontWeight: 600,
-                        color: _selected[index]
-                            ? theme.colorScheme.onPrimary
-                            : theme.colorScheme.onBackground),
-                    onTap: () => {
-                      if (_isSelectable)
-                        {
-                          setState(() {
-                            _selected[index] = !_selected[index];
-                          })
-                        },
-                      if (!_selected.contains(true))
-                        {
-                          setState(() {
-                            _isSelectable = false;
-                          })
-                        }
-                    },
-                    onLongPress: (() => setState(() => {
-                          if (_isSelectable)
-                            {_selected[index] = true}
-                          else
-                            {_isSelectable = true, _selected[index] = true}
-                        })),
+        body: ListView.separated(
+            itemCount: _list.length,
+            itemBuilder: (context, index) {
+              return Ink(
+                color: _selected[index]
+                    ? theme.colorScheme.primary
+                    : theme.colorScheme.background,
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: _selected[index]
+                        ? theme.colorScheme.secondary
+                        : theme.colorScheme.secondary.withAlpha(240),
+                    child: _selected[index]
+                        ? Icon(
+                            Icons.done,
+                            color: theme.colorScheme.onSecondary,
+                          )
+                        : FxText.bodyLarge(_list[index].toString(),
+                            fontWeight: 600,
+                            color: _selected[index]
+                                ? theme.colorScheme.onPrimary
+                                : theme.colorScheme.onSecondary),
                   ),
-                );
-              },
-              separatorBuilder: (_, __) => Divider(
-                    height: 0.5,
-                    color: theme.dividerColor,
-                  )),
-        ));
+                  subtitle: FxText.bodyMedium('Sub Item',
+                      fontWeight: 500,
+                      color: _selected[index]
+                          ? theme.colorScheme.onPrimary
+                          : theme.colorScheme.onBackground),
+                  title: FxText.bodyLarge('Item - ${_list[index]}',
+                      fontWeight: 600,
+                      color: _selected[index]
+                          ? theme.colorScheme.onPrimary
+                          : theme.colorScheme.onBackground),
+                  onTap: () => {
+                    if (_isSelectable)
+                      {
+                        setState(() {
+                          _selected[index] = !_selected[index];
+                        })
+                      },
+                    if (!_selected.contains(true))
+                      {
+                        setState(() {
+                          _isSelectable = false;
+                        })
+                      }
+                  },
+                  onLongPress: (() => setState(() => {
+                        if (_isSelectable)
+                          {_selected[index] = true}
+                        else
+                          {_isSelectable = true, _selected[index] = true}
+                      })),
+                ),
+              );
+            },
+            separatorBuilder: (_, __) => Divider(
+                  height: 0.5,
+                  color: theme.dividerColor,
+                )));
   }
 }

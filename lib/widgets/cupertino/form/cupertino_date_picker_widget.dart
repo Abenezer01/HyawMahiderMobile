@@ -42,10 +42,8 @@ class _CupertinoDatePickerWidgetState extends State<CupertinoDatePickerWidget> {
         ),
         body: Container(
             color: theme.colorScheme.background,
-            child: Container(
-              child: CupertinoDatePicker(
-                  mode: CupertinoDatePickerMode.date,
-                  onDateTimeChanged: (dateTime) {}),
-            )));
+            child: CupertinoDatePicker(
+                mode: CupertinoDatePickerMode.date,
+                onDateTimeChanged: (dateTime) {})));
   }
 }

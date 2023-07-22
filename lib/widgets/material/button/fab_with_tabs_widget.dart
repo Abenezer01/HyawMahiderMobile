@@ -68,14 +68,10 @@ class _FABWithTabsWidgetState extends State<FABWithTabsWidget>
       floatingActionButton: _bottomButtons(),
       body: TabBarView(controller: _tabController, children: [
         Center(
-          child: Container(
-            child: FxText('Tab 1'),
-          ),
+          child: FxText('Tab 1'),
         ),
         Center(
-          child: Container(
-            child: FxText('Tab 2'),
-          ),
+          child: FxText('Tab 2'),
         ),
       ]),
     );

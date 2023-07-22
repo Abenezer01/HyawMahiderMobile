@@ -72,47 +72,43 @@ class _HotelsCarouselWidgetState extends State<HotelsCarouselWidget> {
           ),
           title: FxText.titleMedium("Our Hotels", fontWeight: 600),
         ),
-        body: Container(
-            child: Container(
-                child: Column(
+        body: Column(
           children: <Widget>[
-            Expanded(
-              child: Container(
-                child: PageView(
-                  pageSnapping: true,
-                  physics: ClampingScrollPhysics(),
-                  controller: _pageController,
-                  onPageChanged: (int page) {
-                    setState(() {
-                      _currentPage = page;
-                    });
-                  },
-                  children: const <Widget>[
-                    _SingleHotelPage(
-                      image: './assets/images/place/cuba.jpg',
-                      name: 'Cuba',
-                    ),
-                    _SingleHotelPage(
-                      name: 'London',
-                      image: './assets/images/place/london.jpg',
-                    ),
-                    _SingleHotelPage(
-                      image: './assets/images/place/paris.jpg',
-                      name: 'Paris',
-                    ),
-                  ],
-                ),
+        Expanded(
+          child: PageView(
+            pageSnapping: true,
+            physics: ClampingScrollPhysics(),
+            controller: _pageController,
+            onPageChanged: (int page) {
+              setState(() {
+                _currentPage = page;
+              });
+            },
+            children: const <Widget>[
+              _SingleHotelPage(
+                image: './assets/images/place/cuba.jpg',
+                name: 'Cuba',
               ),
-            ),
-            Container(
-              padding: EdgeInsets.all(16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: _buildPageIndicatorStatic(),
+              _SingleHotelPage(
+                name: 'London',
+                image: './assets/images/place/london.jpg',
               ),
-            ),
+              _SingleHotelPage(
+                image: './assets/images/place/paris.jpg',
+                name: 'Paris',
+              ),
+            ],
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(16),
+          child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: _buildPageIndicatorStatic(),
+          ),
+        ),
           ],
-        ))));
+        ));
   }
 }
 
@@ -137,8 +133,8 @@ class _SingleHotelPage extends StatelessWidget {
             Container(
               height: MediaQuery.of(context).size.width - 80,
               decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(image), fit: BoxFit.fill),
+                image:
+                    DecorationImage(image: AssetImage(image), fit: BoxFit.fill),
               ),
             ),
             Container(

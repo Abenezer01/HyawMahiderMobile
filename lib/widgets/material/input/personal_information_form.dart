@@ -79,46 +79,44 @@ class _PersonalInformationFormState extends State<PersonalInformationForm> {
                     ),
                   ),
                 ),
-                Container(
-                  child: Row(
-                    children: <Widget>[
-                      FxText.bodyLarge("Gender", fontWeight: 600),
-                      Container(
-                        margin: FxSpacing.left(8),
-                        child: Radio(
-                          value: 1,
-                          activeColor: theme.colorScheme.primary,
-                          groupValue: _radioValue,
-                          onChanged: (int? value) {
-                            setState(() {
-                              _radioValue = value;
-                            });
-                          },
-                        ),
+                Row(
+                  children: <Widget>[
+                    FxText.bodyLarge("Gender", fontWeight: 600),
+                    Container(
+                      margin: FxSpacing.left(8),
+                      child: Radio(
+                        value: 1,
+                        activeColor: theme.colorScheme.primary,
+                        groupValue: _radioValue,
+                        onChanged: (int? value) {
+                          setState(() {
+                            _radioValue = value;
+                          });
+                        },
                       ),
-                      FxText.titleSmall("Male",
-                          color: theme.colorScheme.onBackground.withAlpha(240),
-                          letterSpacing: 0.2,
-                          fontWeight: 500),
-                      Container(
-                        margin: FxSpacing.left(8),
-                        child: Radio(
-                          value: 2,
-                          activeColor: theme.colorScheme.primary,
-                          groupValue: _radioValue,
-                          onChanged: (int? value) {
-                            setState(() {
-                              _radioValue = value;
-                            });
-                          },
-                        ),
+                    ),
+                    FxText.titleSmall("Male",
+                        color: theme.colorScheme.onBackground.withAlpha(240),
+                        letterSpacing: 0.2,
+                        fontWeight: 500),
+                    Container(
+                      margin: FxSpacing.left(8),
+                      child: Radio(
+                        value: 2,
+                        activeColor: theme.colorScheme.primary,
+                        groupValue: _radioValue,
+                        onChanged: (int? value) {
+                          setState(() {
+                            _radioValue = value;
+                          });
+                        },
                       ),
-                      FxText.titleSmall("Female",
-                          color: theme.colorScheme.onBackground.withAlpha(240),
-                          letterSpacing: 0.2,
-                          fontWeight: 500),
-                    ],
-                  ),
+                    ),
+                    FxText.titleSmall("Female",
+                        color: theme.colorScheme.onBackground.withAlpha(240),
+                        letterSpacing: 0.2,
+                        fontWeight: 500),
+                  ],
                 ),
                 Container(
                   padding: FxSpacing.top(20),

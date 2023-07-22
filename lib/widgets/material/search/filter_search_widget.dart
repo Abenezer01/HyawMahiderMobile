@@ -147,19 +147,17 @@ class _FilterSearchWidgetState extends State<FilterSearchWidget> {
                 ],
               ),
               Divider(),
-              Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(bottom: 4, top: 4),
-                      child: FxText.bodyMedium("TAGS", fontWeight: 700),
-                    ),
-                    Wrap(
-                      children: _buildChoiceList(),
-                    ),
-                  ],
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(bottom: 4, top: 4),
+                    child: FxText.bodyMedium("TAGS", fontWeight: 700),
+                  ),
+                  Wrap(
+                    children: _buildChoiceList(),
+                  ),
+                ],
               )
             ],
           ),

@@ -40,8 +40,7 @@ class _FeedbackFormWidgetState extends State<FeedbackFormWidget> {
           ),
           title: FxText.titleMedium("Feedback Form", fontWeight: 600),
         ),
-        body: Container(
-            child: SingleChildScrollView(
+        body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -168,6 +167,6 @@ class _FeedbackFormWidgetState extends State<FeedbackFormWidget> {
               ),
             ],
           ),
-        )));
+        ));
   }
 }

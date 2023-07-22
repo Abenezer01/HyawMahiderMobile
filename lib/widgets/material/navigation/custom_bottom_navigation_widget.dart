@@ -59,20 +59,14 @@ class _CustomBottomNavigationWidgetState
             Center(
               child: FxText.titleMedium("Item 1", fontWeight: 600),
             ),
-            Container(
-              child: Center(
-                child: FxText.titleMedium("Item 2", fontWeight: 600),
-              ),
+            Center(
+              child: FxText.titleMedium("Item 2", fontWeight: 600),
             ),
-            Container(
-              child: Center(
-                child: FxText.titleMedium("Item 3", fontWeight: 600),
-              ),
+            Center(
+              child: FxText.titleMedium("Item 3", fontWeight: 600),
             ),
-            Container(
-              child: Center(
-                child: FxText.titleMedium("Item 4", fontWeight: 600),
-              ),
+            Center(
+              child: FxText.titleMedium("Item 4", fontWeight: 600),
             ),
           ],
         ),

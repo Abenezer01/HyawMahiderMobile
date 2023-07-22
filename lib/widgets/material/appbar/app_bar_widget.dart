@@ -55,15 +55,13 @@ class _AppBarWidgetState extends State<AppBarWidget> {
           child: ListView(
             children: <Widget>[
               /*---------  Leading Icon Appbar ----------------*/
-              Container(
-                child: AppBar(
-                  backgroundColor: theme.scaffoldBackgroundColor,
-                  leading: InkWell(
-                    onTap: () => Navigator.of(context).pop(),
-                    child: Icon(FeatherIcons.chevronLeft).autoDirection(),
-                  ),
-                  title: FxText.titleMedium("Leading Icon", fontWeight: 600),
+              AppBar(
+                backgroundColor: theme.scaffoldBackgroundColor,
+                leading: InkWell(
+                  onTap: () => Navigator.of(context).pop(),
+                  child: Icon(FeatherIcons.chevronLeft).autoDirection(),
                 ),
+                title: FxText.titleMedium("Leading Icon", fontWeight: 600),
               ),
 
               /*---------  Trailing Icon Appbar ----------------*/

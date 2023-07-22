@@ -130,14 +130,12 @@ class _FailDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              child: Center(
-                  child: Icon(
-                MdiIcons.emoticonSadOutline,
-                size: 40,
-                color: theme.colorScheme.onBackground.withAlpha(220),
-              )),
-            ),
+            Center(
+                child: Icon(
+              MdiIcons.emoticonSadOutline,
+              size: 40,
+              color: theme.colorScheme.onBackground.withAlpha(220),
+            )),
             Container(
               margin: EdgeInsets.only(top: 16),
               child:

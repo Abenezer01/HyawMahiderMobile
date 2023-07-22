@@ -14,8 +14,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:hyaw_mahider/Attendance/index.dart';
 import 'app_setting_screen.dart';
 // import 'custom_apps_home.dart';
-import 'material_widgets_home.dart';
-import 'others_home.dart';
+
 import 'screens_home.dart';
 
 class HomesScreen extends StatefulWidget {

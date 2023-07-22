@@ -35,10 +35,9 @@ class _DoughnutElevatedState extends State<DoughnutElevated> {
               child: Container(),
             )),
         CircularChartAnnotation(
-            widget: Container(
-                child: Text('62%',
-                    style: TextStyle(
-                        color: Color.fromRGBO(0, 0, 0, 0.5), fontSize: 25))))
+            widget: Text('62%',
+                style: TextStyle(
+                    color: Color.fromRGBO(0, 0, 0, 0.5), fontSize: 25)))
       ],
       title: ChartTitle(
           text: 'Progress of a task', textStyle: FxTextStyle.bodySmall()),

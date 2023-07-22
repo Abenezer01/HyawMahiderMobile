@@ -175,26 +175,24 @@ class _SleepGaugeState extends State<SleepGauge> {
                                           scale: animation.value,
                                           child: child,
                                         ),
-                                        child: Container(
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: <Widget>[
-                                              Text(
-                                                '4 Apr',
-                                                style: TextStyle(
-                                                  fontSize: 10,
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: <Widget>[
+                                            Text(
+                                              '4 Apr',
+                                              style: TextStyle(
+                                                fontSize: 10,
+                                                color: Colors.blue,
+                                              ),
+                                            ),
+                                            SizedBox(height: 4),
+                                            Text(
+                                              _wakeupTimeAnnotation,
+                                              style: TextStyle(
                                                   color: Colors.blue,
-                                                ),
-                                              ),
-                                              SizedBox(height: 4),
-                                              Text(
-                                                _wakeupTimeAnnotation,
-                                                style: TextStyle(
-                                                    color: Colors.blue,
-                                                    fontSize: 16),
-                                              ),
-                                            ],
-                                          ),
+                                                  fontSize: 16),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ),
@@ -305,13 +303,11 @@ class _SleepGaugeState extends State<SleepGauge> {
               : 0;
       final String hourValue = hour.toString().split('.')[0];
 
-      _wakeupTimeAnnotation = '${(hour >= 6 && hour < 10)
-              ? '0$hourValue'
-              : hourValue}:${minutesValue.length == 1 ? '0$minutesValue' : minutesValue}${hourValue0 >= 6 ? ' pm' : ' pm'}';
+      _wakeupTimeAnnotation =
+          '${(hour >= 6 && hour < 10) ? '0$hourValue' : hourValue}:${minutesValue.length == 1 ? '0$minutesValue' : minutesValue}${hourValue0 >= 6 ? ' pm' : ' pm'}';
 
-      _wakeupTime = '${hourValue0 + 6 < 10
-              ? '0$hourValue0'
-              : hourValue0.toString()}:${minutesValue.length == 1 ? '0$minutesValue' : minutesValue}';
+      _wakeupTime =
+          '${hourValue0 + 6 < 10 ? '0$hourValue0' : hourValue0.toString()}:${minutesValue.length == 1 ? '0$minutesValue' : minutesValue}';
 
       final intl.DateFormat dateFormat = intl.DateFormat('HH:mm');
       final DateTime wakeup = dateFormat.parse(_wakeupTime);
@@ -350,15 +346,11 @@ class _SleepGaugeState extends State<SleepGauge> {
       currentMinutes = (currentMinutes * 60) / 100;
       final String minutesValue = currentMinutes.toStringAsFixed(0);
 
-      _bedTimeAnnotation = '${(hourValue >= 0 && hourValue <= 6)
-              ? (hourValue + 6).toString()
-              : (hourValue >= 6 && hourValue <= 12)
-                  ? '0${hourValue - 6}'
-                  : ''}:${minutesValue.length == 1 ? '0$minutesValue' : minutesValue}${value0 >= 6 ? ' am' : ' pm'}';
+      _bedTimeAnnotation =
+          '${(hourValue >= 0 && hourValue <= 6) ? (hourValue + 6).toString() : (hourValue >= 6 && hourValue <= 12) ? '0${hourValue - 6}' : ''}:${minutesValue.length == 1 ? '0$minutesValue' : minutesValue}${value0 >= 6 ? ' am' : ' pm'}';
 
-      _bedTime = '${hourValue < 10
-              ? '0$hourValue'
-              : hourValue.toString()}:${minutesValue.length == 1 ? '0$minutesValue' : minutesValue}';
+      _bedTime =
+          '${hourValue < 10 ? '0$hourValue' : hourValue.toString()}:${minutesValue.length == 1 ? '0$minutesValue' : minutesValue}';
 
       final intl.DateFormat dateFormat = intl.DateFormat('HH:mm');
       final DateTime wakeup =

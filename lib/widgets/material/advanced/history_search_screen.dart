@@ -84,24 +84,22 @@ class _HistorySearchScreenState extends State<HistorySearchScreen> {
                       flex: 1,
                       child: Padding(
                         padding: FxSpacing.fromLTRB(16, 0, 8, 0),
-                        child: Container(
-                          child: TextField(
-                            decoration: InputDecoration(
-                              hintText: "Search here",
-                              border: InputBorder.none,
-                              focusedBorder: InputBorder.none,
-                              enabledBorder: InputBorder.none,
-                              disabledBorder: InputBorder.none,
-                              errorBorder: InputBorder.none,
-                              focusedErrorBorder: InputBorder.none,
-                              isDense: true,
-                            ),
-                            autofocus: true,
-                            maxLines: 1,
-                            textInputAction: TextInputAction.search,
-                            textCapitalization: TextCapitalization.sentences,
-                            onSubmitted: _onSubmit,
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: "Search here",
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            disabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            focusedErrorBorder: InputBorder.none,
+                            isDense: true,
                           ),
+                          autofocus: true,
+                          maxLines: 1,
+                          textInputAction: TextInputAction.search,
+                          textCapitalization: TextCapitalization.sentences,
+                          onSubmitted: _onSubmit,
                         ),
                       ),
                     ),
@@ -125,13 +123,11 @@ class _HistorySearchScreenState extends State<HistorySearchScreen> {
         ),
         FxSpacing.height(32),
         _isInProgress
-            ? Container(
-                child: Center(
-                  child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                    theme.colorScheme.primary,
-                  )),
-                ),
+            ? Center(
+                child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                  theme.colorScheme.primary,
+                )),
               )
             : Container(
                 color: theme.colorScheme.background,

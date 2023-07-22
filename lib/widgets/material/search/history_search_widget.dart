@@ -83,24 +83,22 @@ class _HistorySearchWidgetState extends State<HistorySearchWidget> {
                     flex: 1,
                     child: Padding(
                       padding: const EdgeInsets.only(left: 16.0, right: 8),
-                      child: Container(
-                        child: TextField(
-                          decoration: InputDecoration(
-                            hintText: "Search here",
-                            border: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            enabledBorder: InputBorder.none,
-                            disabledBorder: InputBorder.none,
-                            errorBorder: InputBorder.none,
-                            focusedErrorBorder: InputBorder.none,
-                            isDense: true,
-                          ),
-                          autofocus: true,
-                          maxLines: 1,
-                          textInputAction: TextInputAction.search,
-                          textCapitalization: TextCapitalization.sentences,
-                          onSubmitted: _onSubmit,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "Search here",
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          focusedErrorBorder: InputBorder.none,
+                          isDense: true,
                         ),
+                        autofocus: true,
+                        maxLines: 1,
+                        textInputAction: TextInputAction.search,
+                        textCapitalization: TextCapitalization.sentences,
+                        onSubmitted: _onSubmit,
                       ),
                     ),
                   ),
@@ -120,13 +118,11 @@ class _HistorySearchWidgetState extends State<HistorySearchWidget> {
         ),
         Expanded(
           child: _isInProgress
-              ? Container(
-                  child: Center(
-                    child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                      theme.colorScheme.primary,
-                    )),
-                  ),
+              ? Center(
+                  child: CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                    theme.colorScheme.primary,
+                  )),
                 )
               : Container(
                   color: theme.colorScheme.background,

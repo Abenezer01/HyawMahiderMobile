@@ -46,14 +46,12 @@ class _GalleryBottomSheetState extends State<GalleryBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      child: GridView.count(
-          crossAxisCount: 2,
-          padding: FxSpacing.all(16),
-          mainAxisSpacing: 16,
-          crossAxisSpacing: 16,
-          children: _generateGridItems()),
-    ));
+        body: GridView.count(
+            crossAxisCount: 2,
+            padding: FxSpacing.all(16),
+            mainAxisSpacing: 16,
+            crossAxisSpacing: 16,
+            children: _generateGridItems()));
   }
 
   void _showBottomSheet(context) {

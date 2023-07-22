@@ -85,89 +85,85 @@ class _RangeSelectorBarScreenState extends State<RangeSelectorBarScreen> {
     final ThemeData themeData = Theme.of(context);
     final bool isLightTheme = themeData.brightness == Brightness.light;
     final MediaQueryData mediaQueryData = MediaQuery.of(context);
-    return Container(
-      child: Stack(
-        children: <Widget>[
-          Center(
-            child: Container(
-                padding: const EdgeInsets.only(bottom: 40),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      const Padding(
-                        padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 20.0),
-                        child: Text(
-                          'Sales Metrics',
-                          style: TextStyle(fontSize: 20),
+    return Stack(
+      children: <Widget>[
+        Center(
+          child: Container(
+              padding: const EdgeInsets.only(bottom: 40),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 20.0),
+                      child: Text(
+                        'Sales Metrics',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                    SfRangeSelectorTheme(
+                        data: SfRangeSelectorThemeData(
+                          thumbColor:
+                              isLightTheme ? Colors.white : Colors.black,
+                          thumbStrokeColor:
+                              isLightTheme ? Colors.black : Colors.white,
+                          thumbStrokeWidth: 2.0,
+                          activeTrackHeight: 2.5,
+                          inactiveTrackHeight: 1.0,
+                          activeTrackColor:
+                              isLightTheme ? Colors.black : Colors.white,
+                          inactiveTrackColor:
+                              isLightTheme ? Colors.black : Colors.white,
+                          inactiveRegionColor: isLightTheme
+                              ? Colors.white.withOpacity(0.75)
+                              : const Color.fromRGBO(33, 33, 33, 0.75),
+                          tooltipBackgroundColor:
+                              isLightTheme ? Colors.black : Colors.white,
+                          overlayColor: isLightTheme
+                              ? Colors.black.withOpacity(0.12)
+                              : Colors.white.withOpacity(0.12),
+                          tooltipTextStyle: TextStyle(
+                              color: isLightTheme
+                                  ? Colors.white
+                                  : Colors.black),
                         ),
-                      ),
-                      Container(
-                        child: SfRangeSelectorTheme(
-                            data: SfRangeSelectorThemeData(
-                              thumbColor:
-                                  isLightTheme ? Colors.white : Colors.black,
-                              thumbStrokeColor:
-                                  isLightTheme ? Colors.black : Colors.white,
-                              thumbStrokeWidth: 2.0,
-                              activeTrackHeight: 2.5,
-                              inactiveTrackHeight: 1.0,
-                              activeTrackColor:
-                                  isLightTheme ? Colors.black : Colors.white,
-                              inactiveTrackColor:
-                                  isLightTheme ? Colors.black : Colors.white,
-                              inactiveRegionColor: isLightTheme
-                                  ? Colors.white.withOpacity(0.75)
-                                  : const Color.fromRGBO(33, 33, 33, 0.75),
-                              tooltipBackgroundColor:
-                                  isLightTheme ? Colors.black : Colors.white,
-                              overlayColor: isLightTheme
-                                  ? Colors.black.withOpacity(0.12)
-                                  : Colors.white.withOpacity(0.12),
-                              tooltipTextStyle: TextStyle(
-                                  color: isLightTheme
-                                      ? Colors.white
-                                      : Colors.black),
-                            ),
-                            child: SfRangeSelector(
-                              min: _dayMin.subtract(
-                                const Duration(days: 0, hours: 0),
-                              ),
-                              max: _dayMax.add(
-                                const Duration(days: 0, hours: 0),
-                              ),
-                              controller: _rangeController,
-                              dateFormat: intl.DateFormat.yMd(),
-                              enableTooltip: true,
-                              thumbShape: ThumbShape(),
-                              trackShape: TrackShape(),
-                              overlayShape: OverlayShape(),
-                              tooltipShape: TooltipShape(),
-                              onChanged: (SfRangeValues values) {
-                                setState(() {
-                                  _updateProfit(values);
-                                });
-                              },
-                              child: SizedBox(
-                                width: mediaQueryData.size.width,
-                                height: mediaQueryData.size.height * 0.40 - 25,
-                                child: _getColumnChart(),
-                              ),
-                            )),
-                      ),
-                    ])),
-          ),
-          Padding(
-            padding: EdgeInsets.only(bottom: mediaQueryData.size.height * 0.2),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: Text(
-                _profitText,
-                style: const TextStyle(fontSize: 18.0),
-              ),
+                        child: SfRangeSelector(
+                          min: _dayMin.subtract(
+                            const Duration(days: 0, hours: 0),
+                          ),
+                          max: _dayMax.add(
+                            const Duration(days: 0, hours: 0),
+                          ),
+                          controller: _rangeController,
+                          dateFormat: intl.DateFormat.yMd(),
+                          enableTooltip: true,
+                          thumbShape: ThumbShape(),
+                          trackShape: TrackShape(),
+                          overlayShape: OverlayShape(),
+                          tooltipShape: TooltipShape(),
+                          onChanged: (SfRangeValues values) {
+                            setState(() {
+                              _updateProfit(values);
+                            });
+                          },
+                          child: SizedBox(
+                            width: mediaQueryData.size.width,
+                            height: mediaQueryData.size.height * 0.40 - 25,
+                            child: _getColumnChart(),
+                          ),
+                        )),
+                  ])),
+        ),
+        Padding(
+          padding: EdgeInsets.only(bottom: mediaQueryData.size.height * 0.2),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Text(
+              _profitText,
+              style: const TextStyle(fontSize: 18.0),
             ),
-          )
-        ],
-      ),
+          ),
+        )
+      ],
     );
   }
 
@@ -222,8 +218,7 @@ class _RangeSelectorBarScreenState extends State<RangeSelectorBarScreen> {
     if (profit >= 0) {
       _profitText = 'Total profit: ${profit.roundToDouble()}%';
     } else {
-      _profitText =
-          'Total loss: ${-1 * profit.roundToDouble()}%';
+      _profitText = 'Total loss: ${-1 * profit.roundToDouble()}%';
     }
   }
 }

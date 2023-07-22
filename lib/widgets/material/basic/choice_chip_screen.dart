@@ -101,10 +101,8 @@ class _ChoiceDialogState extends State<ChoiceDialog> {
     themeData = Theme.of(context);
     return AlertDialog(
       title: FxText.bodyLarge("Report Video", fontWeight: 600),
-      content: Container(
-        child: Wrap(
-          children: _buildChoiceList(),
-        ),
+      content: Wrap(
+        children: _buildChoiceList(),
       ),
       actions: <Widget>[
         FxButton.text(

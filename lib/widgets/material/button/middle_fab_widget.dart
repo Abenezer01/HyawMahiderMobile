@@ -40,37 +40,35 @@ class _MiddleFABWidgetState extends State<MiddleFABWidget> {
         ),
         body: Stack(
           children: <Widget>[
-            Container(
-              child: Column(
-                children: <Widget>[
-                  Flexible(
-                    flex: 1,
-                    child: Container(
-                      color: theme.colorScheme.background,
-                      child: Center(
-                        child: FxText.titleMedium(
-                          "Primary Content",
-                          color: theme.colorScheme.onBackground,
-                          letterSpacing: 0.2,
-                        ),
+            Column(
+              children: <Widget>[
+                Flexible(
+                  flex: 1,
+                  child: Container(
+                    color: theme.colorScheme.background,
+                    child: Center(
+                      child: FxText.titleMedium(
+                        "Primary Content",
+                        color: theme.colorScheme.onBackground,
+                        letterSpacing: 0.2,
                       ),
                     ),
                   ),
-                  Flexible(
-                    flex: 1,
-                    child: Container(
-                      color: theme.colorScheme.background,
-                      child: Center(
-                        child: FxText.titleMedium(
-                          "Secondary Content",
-                          color: theme.colorScheme.onBackground.withAlpha(220),
-                          letterSpacing: 0.2,
-                        ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: Container(
+                    color: theme.colorScheme.background,
+                    child: Center(
+                      child: FxText.titleMedium(
+                        "Secondary Content",
+                        color: theme.colorScheme.onBackground.withAlpha(220),
+                        letterSpacing: 0.2,
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             Positioned(
               top: MediaQuery.of(context).size.height / 2 - 75,

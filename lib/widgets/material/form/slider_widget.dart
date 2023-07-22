@@ -56,58 +56,52 @@ class _SliderWidgetState extends State<SliderWidget> {
               child: FxText.titleMedium("Slider",
                   fontWeight: 600, letterSpacing: 0.2),
             ),
-            Container(
-              child: Slider(
-                value: _sliderValue1,
-                onChanged: (value) {
-                  setState(() {
-                    _sliderValue1 = value;
-                  });
-                },
-                min: 0,
-                max: 100,
-              ),
+            Slider(
+              value: _sliderValue1,
+              onChanged: (value) {
+                setState(() {
+                  _sliderValue1 = value;
+                });
+              },
+              min: 0,
+              max: 100,
             ),
             Container(
               padding: EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 0),
               child: FxText.titleMedium("Labeled Slider",
                   fontWeight: 600, letterSpacing: 0.2),
             ),
-            Container(
-              child: Slider(
-                value: _sliderValue2,
-                min: 0,
-                max: 100,
-                divisions: 100,
-                label: _sliderValue2.floor().toString(),
-                onChanged: (value) {
-                  setState(
-                    () {
-                      _sliderValue2 = value;
-                    },
-                  );
-                },
-              ),
+            Slider(
+              value: _sliderValue2,
+              min: 0,
+              max: 100,
+              divisions: 100,
+              label: _sliderValue2.floor().toString(),
+              onChanged: (value) {
+                setState(
+                  () {
+                    _sliderValue2 = value;
+                  },
+                );
+              },
             ),
             Container(
               padding: EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 0),
               child: FxText.titleMedium("Range Slider",
                   fontWeight: 600, letterSpacing: 0.2),
             ),
-            Container(
-              child: RangeSlider(
-                values: RangeValues(_starValue, _endValue),
-                min: 0.0,
-                max: 100.0,
-                onChanged: (values) {
-                  setState(() {
-                    _starValue = values.start.roundToDouble();
-                    _endValue = values.end.roundToDouble();
-                  });
-                },
-                activeColor: theme.sliderTheme.activeTrackColor,
-                inactiveColor: theme.sliderTheme.inactiveTrackColor,
-              ),
+            RangeSlider(
+              values: RangeValues(_starValue, _endValue),
+              min: 0.0,
+              max: 100.0,
+              onChanged: (values) {
+                setState(() {
+                  _starValue = values.start.roundToDouble();
+                  _endValue = values.end.roundToDouble();
+                });
+              },
+              activeColor: theme.sliderTheme.activeTrackColor,
+              inactiveColor: theme.sliderTheme.inactiveTrackColor,
             ),
           ],
         ));

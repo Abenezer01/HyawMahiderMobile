@@ -27,13 +27,11 @@ class _InteractiveViewerWidgetState extends State<InteractiveViewerWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.black,
-        body: Container(
-          child: InteractiveViewer(
-            maxScale: 5.0,
-            minScale: 0.2,
-            boundaryMargin: EdgeInsets.all(5.0),
-            child: Image.asset('./assets/images/all/all-1.jpg'),
-          ),
+        body: InteractiveViewer(
+          maxScale: 5.0,
+          minScale: 0.2,
+          boundaryMargin: EdgeInsets.all(5.0),
+          child: Image.asset('./assets/images/all/all-1.jpg'),
         ));
   }
 }

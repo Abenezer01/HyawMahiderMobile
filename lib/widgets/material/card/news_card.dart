@@ -87,16 +87,14 @@ class _NewsCardState extends State<NewsCard> {
                       ),
                     ),
                     FxSpacing.height(16),
-                    Container(
-                      child: Center(
-                        child: FxButton(
-                          elevation: 0,
-                          borderRadiusAll: 4,
-                          onPressed: () {},
-                          child: FxText.bodyMedium("READ MORE",
-                              fontWeight: 700,
-                              color: theme.colorScheme.onPrimary),
-                        ),
+                    Center(
+                      child: FxButton(
+                        elevation: 0,
+                        borderRadiusAll: 4,
+                        onPressed: () {},
+                        child: FxText.bodyMedium("READ MORE",
+                            fontWeight: 700,
+                            color: theme.colorScheme.onPrimary),
                       ),
                     )
                   ],

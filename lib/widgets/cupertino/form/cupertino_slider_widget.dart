@@ -43,64 +43,57 @@ class _CupertinoSliderWidgetState extends State<CupertinoSliderWidget> {
         ),
         body: Container(
             color: theme.colorScheme.background,
-            child: Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.only(top: 16, left: 16, bottom: 8),
-                    child: FxText.titleSmall("Simple Slider", fontWeight: 600),
-                  ),
-                  CupertinoSlider(
-                    value: _progress,
-                    min: 0.0,
-                    max: 100.0,
-                    activeColor: theme.colorScheme.secondary,
-                    onChanged: (value) {
-                      setState(() {
-                        _progress = value.roundToDouble();
-                      });
-                    },
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(top: 16, left: 16, bottom: 8),
-                    child:
-                        FxText.titleSmall("Divisions Slider", fontWeight: 600),
-                  ),
-                  Container(
-                    child: CupertinoSlider(
-                      value: _progress2,
-                      min: 0.0,
-                      max: 100.0,
-                      activeColor: theme.colorScheme.secondary,
-                      divisions: 5,
-                      onChanged: (value) {
-                        setState(() {
-                          _progress2 = value.roundToDouble();
-                        });
-                      },
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(top: 16, left: 16, bottom: 8),
-                    child: FxText.titleSmall("Thumb Color", fontWeight: 600),
-                  ),
-                  Container(
-                    child: CupertinoSlider(
-                      value: _progress3,
-                      min: 0.0,
-                      max: 100.0,
-                      activeColor: theme.colorScheme.primary,
-                      thumbColor: theme.colorScheme.primary,
-                      onChanged: (value) {
-                        setState(() {
-                          _progress3 = value.roundToDouble();
-                        });
-                      },
-                    ),
-                  ),
-                ],
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(top: 16, left: 16, bottom: 8),
+                  child: FxText.titleSmall("Simple Slider", fontWeight: 600),
+                ),
+                CupertinoSlider(
+                  value: _progress,
+                  min: 0.0,
+                  max: 100.0,
+                  activeColor: theme.colorScheme.secondary,
+                  onChanged: (value) {
+                    setState(() {
+                      _progress = value.roundToDouble();
+                    });
+                  },
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 16, left: 16, bottom: 8),
+                  child: FxText.titleSmall("Divisions Slider", fontWeight: 600),
+                ),
+                CupertinoSlider(
+                  value: _progress2,
+                  min: 0.0,
+                  max: 100.0,
+                  activeColor: theme.colorScheme.secondary,
+                  divisions: 5,
+                  onChanged: (value) {
+                    setState(() {
+                      _progress2 = value.roundToDouble();
+                    });
+                  },
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 16, left: 16, bottom: 8),
+                  child: FxText.titleSmall("Thumb Color", fontWeight: 600),
+                ),
+                CupertinoSlider(
+                  value: _progress3,
+                  min: 0.0,
+                  max: 100.0,
+                  activeColor: theme.colorScheme.primary,
+                  thumbColor: theme.colorScheme.primary,
+                  onChanged: (value) {
+                    setState(() {
+                      _progress3 = value.roundToDouble();
+                    });
+                  },
+                ),
+              ],
             )));
   }
 }

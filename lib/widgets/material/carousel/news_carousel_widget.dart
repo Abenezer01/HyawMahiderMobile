@@ -78,40 +78,38 @@ class _NewsCarouselWidgetState extends State<NewsCarouselWidget> {
         body: Column(
           children: <Widget>[
             Expanded(
-              child: Container(
-                child: PageView(
-                  pageSnapping: true,
-                  physics: ClampingScrollPhysics(),
-                  controller: _pageController,
-                  onPageChanged: (int page) {
-                    setState(() {
-                      _currentPage = page;
-                    });
-                  },
-                  children: <Widget>[
-                    _SingleNewsPage(
-                      image: './assets/images/all/all-p1.jpg',
-                      title: "What happened at MOUNTAIN?",
-                      date: "June 18, 2020",
-                      description: _newsContent,
-                      view: 290,
-                    ),
-                    _SingleNewsPage(
-                      image: './assets/images/all/all-p2.jpg',
-                      title: "What happened under SEA?",
-                      date: "April 12, 2020",
-                      description: _newsContent,
-                      view: 3481,
-                    ),
-                    _SingleNewsPage(
-                      image: './assets/images/all/all-p3.jpg',
-                      title: "What happened at CUBA?",
-                      date: "Feb 14, 2020",
-                      description: _newsContent,
-                      view: 4852,
-                    ),
-                  ],
-                ),
+              child: PageView(
+                pageSnapping: true,
+                physics: ClampingScrollPhysics(),
+                controller: _pageController,
+                onPageChanged: (int page) {
+                  setState(() {
+                    _currentPage = page;
+                  });
+                },
+                children: <Widget>[
+                  _SingleNewsPage(
+                    image: './assets/images/all/all-p1.jpg',
+                    title: "What happened at MOUNTAIN?",
+                    date: "June 18, 2020",
+                    description: _newsContent,
+                    view: 290,
+                  ),
+                  _SingleNewsPage(
+                    image: './assets/images/all/all-p2.jpg',
+                    title: "What happened under SEA?",
+                    date: "April 12, 2020",
+                    description: _newsContent,
+                    view: 3481,
+                  ),
+                  _SingleNewsPage(
+                    image: './assets/images/all/all-p3.jpg',
+                    title: "What happened at CUBA?",
+                    date: "Feb 14, 2020",
+                    description: _newsContent,
+                    view: 4852,
+                  ),
+                ],
               ),
             ),
             Container(
@@ -198,16 +196,14 @@ class _SingleNewsPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Container(
-                        child: Center(
-                          child: FxButton(
-                              elevation: 0,
-                              borderRadiusAll: 4,
-                              onPressed: () {},
-                              child: FxText.bodyMedium("READ MORE",
-                                  fontWeight: 700,
-                                  color: theme.colorScheme.onPrimary)),
-                        ),
+                      Center(
+                        child: FxButton(
+                            elevation: 0,
+                            borderRadiusAll: 4,
+                            onPressed: () {},
+                            child: FxText.bodyMedium("READ MORE",
+                                fontWeight: 700,
+                                color: theme.colorScheme.onPrimary)),
                       )
                     ],
                   ),

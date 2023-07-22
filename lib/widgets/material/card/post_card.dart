@@ -124,68 +124,66 @@ class _SimpleCardState extends State<_SimpleCard> {
     return Card(
       margin: FxSpacing.all(0),
       elevation: widget.elevation,
-      child: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Image(
-              image: AssetImage(widget.image!),
-              height: widget.height!.toDouble(),
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.cover,
-            ),
-            Container(
-              padding: FxSpacing.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      FxText.titleMedium(widget.title!, fontWeight: 600),
-                      Container(
-                        margin: FxSpacing.top(2),
-                        child: FxText.bodyMedium(widget.description!,
-                            fontWeight: 500, height: 1.2),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Image(
+            image: AssetImage(widget.image!),
+            height: widget.height!.toDouble(),
+            width: MediaQuery.of(context).size.width,
+            fit: BoxFit.cover,
+          ),
+          Container(
+            padding: FxSpacing.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    FxText.titleMedium(widget.title!, fontWeight: 600),
+                    Container(
+                      margin: FxSpacing.top(2),
+                      child: FxText.bodyMedium(widget.description!,
+                          fontWeight: 500, height: 1.2),
+                    ),
+                    Container(
+                      margin: FxSpacing.top(8),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.favorite_outline,
+                            color: theme.colorScheme.secondary,
+                            size: 20,
+                          ),
+                          FxSpacing.width(16),
+                          Container(
+                            margin: EdgeInsets.only(left: 4),
+                            child: FxText.bodySmall(widget.like.toString(),
+                                fontWeight: 600),
+                          ),
+                          Container(
+                              margin: EdgeInsets.only(left: 16),
+                              child: Icon(
+                                Icons.remove_red_eye_outlined,
+                                color: theme.colorScheme.onBackground,
+                                size: 20,
+                              )),
+                          Container(
+                            margin: EdgeInsets.only(left: 4),
+                            child: FxText.bodySmall(widget.view.toString(),
+                                fontWeight: 600),
+                          ),
+                        ],
                       ),
-                      Container(
-                        margin: FxSpacing.top(8),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Icon(
-                              Icons.favorite_outline,
-                              color: theme.colorScheme.secondary,
-                              size: 20,
-                            ),
-                            FxSpacing.width(16),
-                            Container(
-                              margin: EdgeInsets.only(left: 4),
-                              child: FxText.bodySmall(widget.like.toString(),
-                                  fontWeight: 600),
-                            ),
-                            Container(
-                                margin: EdgeInsets.only(left: 16),
-                                child: Icon(
-                                  Icons.remove_red_eye_outlined,
-                                  color: theme.colorScheme.onBackground,
-                                  size: 20,
-                                )),
-                            Container(
-                              margin: EdgeInsets.only(left: 4),
-                              child: FxText.bodySmall(widget.view.toString(),
-                                  fontWeight: 600),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

@@ -14,8 +14,7 @@ class _StepsGaugeState extends State<StepsGauge> {
 
   @override
   void didChangeDependencies() {
-    precacheImage(
-        AssetImage('assets/other/person_walking.png'), context);
+    precacheImage(AssetImage('assets/other/person_walking.png'), context);
     super.didChangeDependencies();
   }
 
@@ -63,10 +62,9 @@ class _StepsGaugeState extends State<StepsGauge> {
                     offset: 60,
                     color: Colors.transparent,
                     position: LinearElementPosition.outside,
-                    child: Container(
-                        child: Text('Sun, 7 February',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w500)))),
+                    child: Text('Sun, 7 February',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w500))),
               ],
               markerPointers: <LinearMarkerPointer>[
                 LinearWidgetPointer(

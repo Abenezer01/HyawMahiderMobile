@@ -3,21 +3,21 @@ class NoticeBoard {
   String title;
   String author;
   String content;
-
-  NoticeBoard({
-    required this.id,
-    required this.title,
-    required this.author,
-    required this.content,
-  });
+  String createdAt;
+  NoticeBoard(
+      {required this.id,
+      required this.title,
+      required this.author,
+      required this.content,
+      required this.createdAt});
 
   factory NoticeBoard.fromMap(Map<String, dynamic> map) {
     return NoticeBoard(
-      id: map['id'] ?? '',
-      title: map['title'] ?? '',
-      content: map['content'] ?? '',
-      author: map['author'] ?? '',
-    );
+        id: map['id'] ?? '',
+        title: map['title'] ?? '',
+        content: map['content'] ?? '',
+        author: map['author'] ?? '',
+        createdAt: map['createdAt']);
   }
   @override
   String toString() {

@@ -102,16 +102,14 @@ class _FullPageNewsCardWidgetState extends State<FullPageNewsCardWidget> {
                                 ],
                               ),
                             ),
-                            Container(
-                              child: Center(
-                                child: FxButton(
-                                    elevation: 0,
-                                    borderRadiusAll: 4,
-                                    onPressed: () {},
-                                    child: FxText.bodyMedium("READ MORE",
-                                        fontWeight: 600,
-                                        color: theme.colorScheme.onPrimary)),
-                              ),
+                            Center(
+                              child: FxButton(
+                                  elevation: 0,
+                                  borderRadiusAll: 4,
+                                  onPressed: () {},
+                                  child: FxText.bodyMedium("READ MORE",
+                                      fontWeight: 600,
+                                      color: theme.colorScheme.onPrimary)),
                             )
                           ],
                         ),

@@ -31,8 +31,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
         debugShowCheckedModeBanner: false,
         theme: theme,
         home: Scaffold(
-            body: Container(
-                child: FxOnBoarding(
+            body: FxOnBoarding(
           pages: <PageViewModel>[
             PageViewModel(
               theme.colorScheme.background,
@@ -176,6 +175,6 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
               ),
             ),
           ),
-        ))));
+        )));
   }
 }

@@ -235,37 +235,33 @@ class _FormScreenState extends State<FormScreen> {
                     child: FxText.titleMedium("Sliders",
                         fontWeight: 600, letterSpacing: 0.2),
                   ),
-                  Container(
-                    child: Slider(
-                      value: _sliderValue1,
-                      onChanged: (value) {
-                        setState(() {
-                          _sliderValue1 = value;
-                        });
-                      },
-                      activeColor: theme.colorScheme.primary,
-                      inactiveColor: theme.colorScheme.primary.withAlpha(100),
-                      min: 0,
-                      max: 100,
-                    ),
+                  Slider(
+                    value: _sliderValue1,
+                    onChanged: (value) {
+                      setState(() {
+                        _sliderValue1 = value;
+                      });
+                    },
+                    activeColor: theme.colorScheme.primary,
+                    inactiveColor: theme.colorScheme.primary.withAlpha(100),
+                    min: 0,
+                    max: 100,
                   ),
-                  Container(
-                    child: Slider(
-                      value: _sliderValue2,
-                      min: 0,
-                      max: 100,
-                      divisions: 100,
-                      activeColor: theme.colorScheme.primary,
-                      inactiveColor: theme.colorScheme.primary.withAlpha(100),
-                      label: _sliderValue2.floor().toString(),
-                      onChanged: (value) {
-                        setState(
-                          () {
-                            _sliderValue2 = value;
-                          },
-                        );
-                      },
-                    ),
+                  Slider(
+                    value: _sliderValue2,
+                    min: 0,
+                    max: 100,
+                    divisions: 100,
+                    activeColor: theme.colorScheme.primary,
+                    inactiveColor: theme.colorScheme.primary.withAlpha(100),
+                    label: _sliderValue2.floor().toString(),
+                    onChanged: (value) {
+                      setState(
+                        () {
+                          _sliderValue2 = value;
+                        },
+                      );
+                    },
                   ),
                   RangeSlider(
                     values: rangeValues,

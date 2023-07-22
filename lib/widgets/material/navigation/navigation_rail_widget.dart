@@ -76,12 +76,9 @@ class _NavigationRailWidgetState extends State<NavigationRailWidget> {
 
             // This is the main content.
             Expanded(
-              child: Container(
-                child: Center(
-                  child: FxText.titleMedium('Selected : $_selectedIndex',
-                      color: theme.colorScheme.onBackground,
-                      letterSpacing: 0.3),
-                ),
+              child: Center(
+                child: FxText.titleMedium('Selected : $_selectedIndex',
+                    color: theme.colorScheme.onBackground, letterSpacing: 0.3),
               ),
             )
           ],

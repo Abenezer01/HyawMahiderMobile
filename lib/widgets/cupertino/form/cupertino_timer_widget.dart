@@ -43,11 +43,9 @@ class _CupertinoTimerPickerWidgetState
         ),
         body: Container(
             color: theme.colorScheme.background,
-            child: Container(
-              child: CupertinoTimerPicker(
-                onTimerDurationChanged: (Duration value) {},
-                mode: CupertinoTimerPickerMode.hms,
-              ),
+            child: CupertinoTimerPicker(
+              onTimerDurationChanged: (Duration value) {},
+              mode: CupertinoTimerPickerMode.hms,
             )));
   }
 }

@@ -81,33 +81,55 @@ class _FullDialog extends StatelessWidget {
     ThemeData theme = AppTheme.theme;
     return Scaffold(
       backgroundColor: theme.colorScheme.background,
-      body: Container(
-        child: ListView(
-          padding: EdgeInsets.all(0),
-          children: <Widget>[
-            Stack(children: [
-              Image(
-                image: AssetImage("./assets/images/all/all-p1.jpg"),
-                width: MediaQuery.of(context).size.width,
-                fit: BoxFit.cover,
-                height: MediaQuery.of(context).size.height * 0.45,
-              ),
-              Positioned(
-                  top: 24,
-                  left: 18,
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Icon(MdiIcons.chevronLeft, color: Colors.white),
-                  )),
-              Positioned(
-                right: 16,
-                bottom: 16,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    ClipOval(
+      body: ListView(
+        padding: EdgeInsets.all(0),
+        children: <Widget>[
+          Stack(children: [
+            Image(
+              image: AssetImage("./assets/images/all/all-p1.jpg"),
+              width: MediaQuery.of(context).size.width,
+              fit: BoxFit.cover,
+              height: MediaQuery.of(context).size.height * 0.45,
+            ),
+            Positioned(
+                top: 24,
+                left: 18,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Icon(MdiIcons.chevronLeft, color: Colors.white),
+                )),
+            Positioned(
+              right: 16,
+              bottom: 16,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ClipOval(
+                    child: Material(
+                      color: Colors.white.withAlpha(72),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(28),
+                          side: BorderSide(width: 0)),
+                      child: InkWell(
+                        splashColor: Colors.white.withAlpha(100),
+                        highlightColor: Colors.white.withAlpha(72),
+                        child: SizedBox(
+                            width: 44,
+                            height: 44,
+                            child: Icon(
+                              MdiIcons.heartOutline,
+                              color: Colors.white,
+                              size: 22,
+                            )),
+                        onTap: () {},
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 8),
+                    child: ClipOval(
                       child: Material(
                         color: Colors.white.withAlpha(72),
                         shape: RoundedRectangleBorder(
@@ -120,7 +142,7 @@ class _FullDialog extends StatelessWidget {
                               width: 44,
                               height: 44,
                               child: Icon(
-                                MdiIcons.heartOutline,
+                                MdiIcons.shareOutline,
                                 color: Colors.white,
                                 size: 22,
                               )),
@@ -128,83 +150,58 @@ class _FullDialog extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(left: 8),
-                      child: ClipOval(
-                        child: Material(
-                          color: Colors.white.withAlpha(72),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(28),
-                              side: BorderSide(width: 0)),
-                          child: InkWell(
-                            splashColor: Colors.white.withAlpha(100),
-                            highlightColor: Colors.white.withAlpha(72),
-                            child: SizedBox(
-                                width: 44,
-                                height: 44,
-                                child: Icon(
-                                  MdiIcons.shareOutline,
-                                  color: Colors.white,
-                                  size: 22,
-                                )),
-                            onTap: () {},
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            ]),
-            Container(
-              padding: EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  FxText.headlineSmall("How do you get up and go forward",
-                      fontWeight: 700),
-                  Container(
-                      margin: EdgeInsets.only(top: 8),
-                      child: FxText.bodyMedium(description,
-                          fontWeight: 500, height: 1.2)),
-                  Container(
-                    margin: EdgeInsets.only(top: 16),
-                    child: Row(
-                      children: <Widget>[
-                        Container(
-                          width: 56,
-                          height: 56,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    './assets/images/profile/avatar_4.jpg'),
-                                fit: BoxFit.fill),
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.only(left: 8),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                FxText.titleMedium("Zakariyah Cline",
-                                    fontWeight: 600),
-                                FxText.titleSmall("@zaka_cline",
-                                    fontWeight: 500)
-                              ],
-                            ),
-                          ),
-                        ),
-                        FxText.bodyLarge("26 May", fontWeight: 600),
-                      ],
-                    ),
                   ),
                 ],
               ),
             )
-          ],
-        ),
+          ]),
+          Container(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                FxText.headlineSmall("How do you get up and go forward",
+                    fontWeight: 700),
+                Container(
+                    margin: EdgeInsets.only(top: 8),
+                    child: FxText.bodyMedium(description,
+                        fontWeight: 500, height: 1.2)),
+                Container(
+                  margin: EdgeInsets.only(top: 16),
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        width: 56,
+                        height: 56,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              image: AssetImage(
+                                  './assets/images/profile/avatar_4.jpg'),
+                              fit: BoxFit.fill),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          margin: EdgeInsets.only(left: 8),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              FxText.titleMedium("Zakariyah Cline",
+                                  fontWeight: 600),
+                              FxText.titleSmall("@zaka_cline", fontWeight: 500)
+                            ],
+                          ),
+                        ),
+                      ),
+                      FxText.bodyLarge("26 May", fontWeight: 600),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

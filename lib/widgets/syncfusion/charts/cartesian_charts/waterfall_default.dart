@@ -50,7 +50,8 @@ class _WaterfallDefaultState extends State<WaterfallDefault> {
       series: _getWaterFallSeries(),
       tooltipBehavior: _tooltipBehavior,
       onTooltipRender: (TooltipArgs args) {
-        args.text = '${args.dataPoints![args.pointIndex!.toInt()].x} : ${args.dataPoints![args.pointIndex!.toInt()].y / 1000}B';
+        args.text =
+            '${args.dataPoints![args.pointIndex!.toInt()].x} : ${args.dataPoints![args.pointIndex!.toInt()].y / 1000}B';
       },
       onDataLabelRender: (DataLabelRenderArgs dataLabelArgs) {
         if (dataLabelArgs.pointIndex == 0) {

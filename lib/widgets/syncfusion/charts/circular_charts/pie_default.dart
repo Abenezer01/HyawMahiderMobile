@@ -14,8 +14,7 @@ class PieDefault extends StatefulWidget {
 class _PieDefaultState extends State<PieDefault> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: SizedBox(height: 400, child: _buildDefaultPieChart()));
+    return Center(child: SizedBox(height: 400, child: _buildDefaultPieChart()));
   }
 
   SfCircularChart _buildDefaultPieChart() {

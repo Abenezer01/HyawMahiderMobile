@@ -40,8 +40,7 @@ class _ShoppingCardWidgetState extends State<ShoppingCardWidget> {
           ),
           title: FxText.titleMedium("Shopping", fontWeight: 600),
         ),
-        body: Container(
-            child: ListView(
+        body: ListView(
           padding: EdgeInsets.only(left: 16, right: 16),
           children: <Widget>[
             Container(
@@ -88,7 +87,7 @@ class _ShoppingCardWidgetState extends State<ShoppingCardWidget> {
               ),
             ),
           ],
-        )));
+        ));
   }
 }
 

@@ -66,18 +66,16 @@ class _RefreshListWidgetState extends State<RefreshListWidget> {
           ),
           title: FxText.titleMedium("Pull to Refresh", fontWeight: 600),
         ),
-        body: Container(
-          child: RefreshIndicator(
-            backgroundColor: theme.colorScheme.background,
-            color: theme.colorScheme.primary,
-            onRefresh: _onRefresh,
-            child: AnimatedList(
-              key: listKey,
-              initialItemCount: _items.length,
-              itemBuilder: (context, index, animation) {
-                return _buildItem(context, index, animation);
-              },
-            ),
+        body: RefreshIndicator(
+          backgroundColor: theme.colorScheme.background,
+          color: theme.colorScheme.primary,
+          onRefresh: _onRefresh,
+          child: AnimatedList(
+            key: listKey,
+            initialItemCount: _items.length,
+            itemBuilder: (context, index, animation) {
+              return _buildItem(context, index, animation);
+            },
           ),
         ));
   }

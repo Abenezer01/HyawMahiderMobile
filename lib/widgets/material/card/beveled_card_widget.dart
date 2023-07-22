@@ -64,44 +64,42 @@ class _BeveledCard extends StatelessWidget {
       shape: BeveledRectangleBorder(
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Image(
-              image: AssetImage("./assets/images/apps/hotel/room-1.jpg"),
-              height: 180,
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.fill,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Image(
+            image: AssetImage("./assets/images/apps/hotel/room-1.jpg"),
+            height: 180,
+            width: MediaQuery.of(context).size.width,
+            fit: BoxFit.fill,
+          ),
+          Container(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    FxText.titleMedium("Beveled", fontWeight: 600),
+                    FxText.bodyMedium(
+                        "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.",
+                        height: 1.2,
+                        fontWeight: 500),
+                    Container(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                          onPressed: () {},
+                          child: FxText.labelMedium("ACTION",
+                              fontWeight: 600,
+                              color: theme.colorScheme.primary)),
+                    )
+                  ],
+                ),
+              ],
             ),
-            Container(
-              padding: EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      FxText.titleMedium("Beveled", fontWeight: 600),
-                      FxText.bodyMedium(
-                          "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.",
-                          height: 1.2,
-                          fontWeight: 500),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                            onPressed: () {},
-                            child: FxText.labelMedium("ACTION",
-                                fontWeight: 600,
-                                color: theme.colorScheme.primary)),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
@@ -118,44 +116,42 @@ class _OneSidedBeveledCard extends StatelessWidget {
       shape: BeveledRectangleBorder(
         borderRadius: BorderRadius.only(topLeft: Radius.circular(20)),
       ),
-      child: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Image(
-              image: AssetImage("./assets/images/apps/hotel/room-2.jpg"),
-              height: 180,
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.fill,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Image(
+            image: AssetImage("./assets/images/apps/hotel/room-2.jpg"),
+            height: 180,
+            width: MediaQuery.of(context).size.width,
+            fit: BoxFit.fill,
+          ),
+          Container(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    FxText.titleMedium("One Sided", fontWeight: 600),
+                    FxText.bodyMedium(
+                        "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.",
+                        height: 1.2,
+                        fontWeight: 500),
+                    Container(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                          onPressed: () {},
+                          child: FxText.labelMedium("ACTION",
+                              fontWeight: 600,
+                              color: theme.colorScheme.primary)),
+                    )
+                  ],
+                ),
+              ],
             ),
-            Container(
-              padding: EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      FxText.titleMedium("One Sided", fontWeight: 600),
-                      FxText.bodyMedium(
-                          "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.",
-                          height: 1.2,
-                          fontWeight: 500),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                            onPressed: () {},
-                            child: FxText.labelMedium("ACTION",
-                                fontWeight: 600,
-                                color: theme.colorScheme.primary)),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
@@ -173,44 +169,42 @@ class _TwoSidedBeveledCard extends StatelessWidget {
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20), topRight: Radius.circular(20)),
       ),
-      child: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Image(
-              image: AssetImage("./assets/images/apps/hotel/room-3.jpg"),
-              height: 180,
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.fill,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Image(
+            image: AssetImage("./assets/images/apps/hotel/room-3.jpg"),
+            height: 180,
+            width: MediaQuery.of(context).size.width,
+            fit: BoxFit.fill,
+          ),
+          Container(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    FxText.titleMedium("Two Sided", fontWeight: 600),
+                    FxText.bodyMedium(
+                        "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.",
+                        height: 1.2,
+                        fontWeight: 500),
+                    Container(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                          onPressed: () {},
+                          child: FxText.labelMedium("ACTION",
+                              fontWeight: 600,
+                              color: theme.colorScheme.primary)),
+                    )
+                  ],
+                ),
+              ],
             ),
-            Container(
-              padding: EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      FxText.titleMedium("Two Sided", fontWeight: 600),
-                      FxText.bodyMedium(
-                          "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.",
-                          height: 1.2,
-                          fontWeight: 500),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                            onPressed: () {},
-                            child: FxText.labelMedium("ACTION",
-                                fontWeight: 600,
-                                color: theme.colorScheme.primary)),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

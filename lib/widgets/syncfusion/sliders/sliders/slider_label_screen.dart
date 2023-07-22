@@ -79,21 +79,20 @@ class _SliderLabelScreenState extends State<SliderLabelScreen> {
   }
 
   Widget _buildMobileLayout() {
-    return Container(
-        child: Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        FxText.bodyMedium('Dividers'),
-        _sliderWithDividerCustomization(),
-        FxSpacing.height(24),
-        FxText.bodyMedium('Labels'),
-        _sliderWithLabelCustomization(),
-        FxSpacing.height(24),
-        FxText.bodyMedium('Ticks'),
-        _sliderWithTickCustomization(),
-        FxSpacing.height(24),
+    FxText.bodyMedium('Dividers'),
+    _sliderWithDividerCustomization(),
+    FxSpacing.height(24),
+    FxText.bodyMedium('Labels'),
+    _sliderWithLabelCustomization(),
+    FxSpacing.height(24),
+    FxText.bodyMedium('Ticks'),
+    _sliderWithTickCustomization(),
+    FxSpacing.height(24),
       ],
-    ));
+    );
   }
 
   @override

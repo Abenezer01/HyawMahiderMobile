@@ -109,10 +109,7 @@ class _PaymentDoneDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              child: Center(
-                  child: FxText.titleMedium("Thank You!", fontWeight: 700)),
-            ),
+            Center(child: FxText.titleMedium("Thank You!", fontWeight: 700)),
             Center(
                 child: FxText.bodyMedium(
               "Your transaction was successful",

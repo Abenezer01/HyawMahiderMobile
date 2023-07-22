@@ -85,13 +85,11 @@ class _UploadProgressState extends State<UploadProgress>
                     ? Row(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          Container(
-                            child: CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                theme.colorScheme.primary,
-                              ),
-                              value: animation.value,
+                          CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              theme.colorScheme.primary,
                             ),
+                            value: animation.value,
                           ),
                           FxSpacing.width(20),
                           FxText.bodyMedium("Uploading...",
@@ -134,14 +132,12 @@ class _UploadDoneDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              child: Center(
-                  child: Icon(
-                Icons.cloud_upload_outlined,
-                size: 40,
-                color: theme.colorScheme.onBackground.withAlpha(220),
-              )),
-            ),
+            Center(
+                child: Icon(
+              Icons.cloud_upload_outlined,
+              size: 40,
+              color: theme.colorScheme.onBackground.withAlpha(220),
+            )),
             Container(
               margin: FxSpacing.top(16),
               child: Center(

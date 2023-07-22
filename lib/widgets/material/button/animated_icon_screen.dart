@@ -31,9 +31,7 @@ class _AnimatedIconScreenState extends State<AnimatedIconScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Container(
-            child: FxText.titleSmall("Animated Icon", fontWeight: 600),
-          ),
+          FxText.titleSmall("Animated Icon", fontWeight: 600),
           Container(
             margin: FxSpacing.top(8),
             child: Row(

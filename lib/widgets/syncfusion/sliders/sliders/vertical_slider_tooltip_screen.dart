@@ -62,17 +62,17 @@ class _VerticalSliderTooltipScreenState
 
   Widget _buildMobileLayout() {
     return Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Column(children: <Widget>[
               Expanded(child: _numerical()),
-              const Text('Tooltip on the right')
+              Text('Tooltip on the right')
             ]),
             Column(children: <Widget>[
               Expanded(child: _dateTimeSlider()),
-              const Text('Tooltip on the left'),
+              Text('Tooltip on the left'),
             ]),
           ],
         ));

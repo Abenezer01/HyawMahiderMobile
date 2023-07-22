@@ -27,8 +27,7 @@ class _PieGradientState extends State<PieGradient> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: SizedBox(height: 400, child: _buildDefaultPieChart()));
+    return Center(child: SizedBox(height: 400, child: _buildDefaultPieChart()));
   }
 
   void _initializeVariables() {

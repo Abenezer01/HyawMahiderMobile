@@ -89,24 +89,22 @@ class _ProductsSearchWidgetState extends State<ProductsSearchWidget> {
                         flex: 1,
                         child: Padding(
                           padding: FxSpacing.fromLTRB(16, 0, 8, 0),
-                          child: Container(
-                            child: TextField(
-                              decoration: InputDecoration(
-                                hintText: "Try to search",
-                                border: InputBorder.none,
-                                focusedBorder: InputBorder.none,
-                                enabledBorder: InputBorder.none,
-                                disabledBorder: InputBorder.none,
-                                errorBorder: InputBorder.none,
-                                focusedErrorBorder: InputBorder.none,
-                                isDense: true,
-                              ),
-                              autofocus: false,
-                              maxLines: 1,
-                              textInputAction: TextInputAction.search,
-                              textCapitalization: TextCapitalization.sentences,
-                              onSubmitted: _onSubmit,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              hintText: "Try to search",
+                              border: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              disabledBorder: InputBorder.none,
+                              errorBorder: InputBorder.none,
+                              focusedErrorBorder: InputBorder.none,
+                              isDense: true,
                             ),
+                            autofocus: false,
+                            maxLines: 1,
+                            textInputAction: TextInputAction.search,
+                            textCapitalization: TextCapitalization.sentences,
+                            onSubmitted: _onSubmit,
                           ),
                         ),
                       ),
@@ -123,13 +121,11 @@ class _ProductsSearchWidgetState extends State<ProductsSearchWidget> {
             ),
             Expanded(
               child: _isInProgress
-                  ? Container(
-                      child: Center(
-                        child: CircularProgressIndicator(
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.colorScheme.primary,
-                        )),
-                      ),
+                  ? Center(
+                      child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                        theme.colorScheme.primary,
+                      )),
                     )
                   : Container(
                       color: theme.colorScheme.background,

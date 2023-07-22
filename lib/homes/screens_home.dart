@@ -10,6 +10,7 @@ import 'package:hyaw_mahider/models/NoticeBoard.dart';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import './components/file_view.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 class ScreensHome extends StatefulWidget {
   @override
@@ -85,6 +86,12 @@ class _ScreensHomeState extends State<ScreensHome> {
     }
   }
 
+  String ago(String dateString) {
+    final now = DateTime.now();
+    final date = DateTime.parse(dateString);
+    return timeago.format(date, locale: 'en');
+  }
+
   Widget notice(NoticeBoard notice) {
     bool _isDownloading = false;
     AnimationController _animationController;
@@ -106,12 +113,12 @@ class _ScreensHomeState extends State<ScreensHome> {
           Row(
             children: [
               Icon(
-                FeatherIcons.mapPin,
+                FeatherIcons.user,
                 size: 12,
               ),
               FxSpacing.width(4),
               FxText.bodySmall(
-                notice.content,
+                notice.author,
                 xMuted: true,
               ),
             ],
@@ -121,10 +128,10 @@ class _ScreensHomeState extends State<ScreensHome> {
             paddingAll: 0,
             borderRadiusAll: Constant.containerRadius.xs,
             clipBehavior: Clip.antiAliasWithSaveLayer,
-            // child: Image(
-            //   image: AssetImage(car.image),
-            //   fit: BoxFit.cover,
-            // ),
+            child: FxText.bodyMedium(
+              notice.content,
+              xMuted: false,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -137,34 +144,34 @@ class _ScreensHomeState extends State<ScreensHome> {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(
-                    Icons.person,
-                    color: theme.colorScheme.primary,
-                    size: 20,
-                  ),
+                  // Icon(
+                  //   Icons.person,
+                  //   color: theme.colorScheme.primary,
+                  //   size: 20,
+                  // ),
                   FxSpacing.width(4),
-                  FxText.bodySmall(
-                    " Passengers",
-                    fontWeight: 600,
-                  ),
+                  // FxText.bodySmall(
+                  //   "warning",
+                  //   fontWeight: 600,
+                  // ),
                 ],
               ),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(
-                    Icons.settings,
-                    color: theme.colorScheme.primary,
-                    size: 20,
-                  ),
+                  // Icon(
+                  //   Icons.settings,
+                  //   color: theme.colorScheme.primary,
+                  //   size: 20,
+                  // ),
                   FxSpacing.width(4),
                   FxText.bodySmall(
-                    'car.type',
+                    '',
                     fontWeight: 600,
                   ),
                 ],
               ),
-              FxText.bodySmall("\$${'car.price.precise'}/hour"),
+              FxText.bodySmall(ago(notice.createdAt)),
             ],
           ),
         ],

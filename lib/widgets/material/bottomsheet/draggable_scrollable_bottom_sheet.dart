@@ -36,15 +36,13 @@ class _DraggableScrollableSheetState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: DraggableScrollableSheet(
-          initialChildSize: 0.13,
-          minChildSize: 0.13,
-          maxChildSize: 0.75,
-          builder: (BuildContext context, controller) {
-            return _bottomSheet(controller);
-          },
-        ),
+      body: DraggableScrollableSheet(
+        initialChildSize: 0.13,
+        minChildSize: 0.13,
+        maxChildSize: 0.75,
+        builder: (BuildContext context, controller) {
+          return _bottomSheet(controller);
+        },
       ),
     );
   }
@@ -100,40 +98,38 @@ class _DraggableScrollableSheetState
                           ],
                         ),
                       ),
-                      Container(
-                        child: Row(
-                          children: <Widget>[
-                            SingleAnimatedIcon(
-                              animatedIconData: AnimatedIcons.play_pause,
-                              backgroundColor: theme.colorScheme.primary,
-                              iconColor: theme.colorScheme.onPrimary,
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(left: 8),
-                              child: ClipOval(
-                                child: Material(
-                                  color: Colors.transparent,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(28),
-                                      side: BorderSide.none),
-                                  child: InkWell(
-                                    splashColor: theme.colorScheme.primary,
-                                    // inkwell color
-                                    child: SizedBox(
-                                        height: 40,
-                                        width: 40,
-                                        child: Icon(
-                                          Icons.skip_next_outlined,
-                                          color: theme.colorScheme.onBackground,
-                                          size: 28,
-                                        )),
-                                    onTap: () {},
-                                  ),
+                      Row(
+                        children: <Widget>[
+                          SingleAnimatedIcon(
+                            animatedIconData: AnimatedIcons.play_pause,
+                            backgroundColor: theme.colorScheme.primary,
+                            iconColor: theme.colorScheme.onPrimary,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 8),
+                            child: ClipOval(
+                              child: Material(
+                                color: Colors.transparent,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(28),
+                                    side: BorderSide.none),
+                                child: InkWell(
+                                  splashColor: theme.colorScheme.primary,
+                                  // inkwell color
+                                  child: SizedBox(
+                                      height: 40,
+                                      width: 40,
+                                      child: Icon(
+                                        Icons.skip_next_outlined,
+                                        color: theme.colorScheme.onBackground,
+                                        size: 28,
+                                      )),
+                                  onTap: () {},
                                 ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -247,44 +243,40 @@ class _SingleQueueWidget extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            child: ClipOval(
-              child: Material(
-                color: themeData.primaryColor.withAlpha(16),
-                child: InkWell(
-                  splashColor: themeData.colorScheme.primary.withAlpha(100),
-                  highlightColor: themeData.primaryColor.withAlpha(16),
-                  child: SizedBox(
-                      width: 40,
-                      height: 40,
-                      child: Icon(
-                        Icons.favorite_outline,
-                        color: themeData.colorScheme.primary,
-                        size: 22,
-                      )),
-                  onTap: () {},
-                ),
+          ClipOval(
+            child: Material(
+              color: themeData.primaryColor.withAlpha(16),
+              child: InkWell(
+                splashColor: themeData.colorScheme.primary.withAlpha(100),
+                highlightColor: themeData.primaryColor.withAlpha(16),
+                child: SizedBox(
+                    width: 40,
+                    height: 40,
+                    child: Icon(
+                      Icons.favorite_outline,
+                      color: themeData.colorScheme.primary,
+                      size: 22,
+                    )),
+                onTap: () {},
               ),
             ),
           ),
-          Container(
-            child: PopupMenuButton(
-              itemBuilder: (BuildContext context) {
-                return choice.map((String choice) {
-                  return PopupMenuItem(
-                    value: choice,
-                    child: FxText.bodyMedium(choice,
-                        color: themeData.colorScheme.onBackground,
-                        letterSpacing: 0.2),
-                  );
-                }).toList();
-              },
-              icon: Icon(
-                Icons.more_vert_sharp,
-                color: themeData.colorScheme.onBackground,
-              ),
-              color: themeData.colorScheme.background,
+          PopupMenuButton(
+            itemBuilder: (BuildContext context) {
+              return choice.map((String choice) {
+                return PopupMenuItem(
+                  value: choice,
+                  child: FxText.bodyMedium(choice,
+                      color: themeData.colorScheme.onBackground,
+                      letterSpacing: 0.2),
+                );
+              }).toList();
+            },
+            icon: Icon(
+              Icons.more_vert_sharp,
+              color: themeData.colorScheme.onBackground,
             ),
+            color: themeData.colorScheme.background,
           ),
         ],
       ),

@@ -184,13 +184,11 @@ class _CommentDialog extends StatelessWidget {
               comment: 'Lorem ipsum, or lipsum as it is sometimes known',
               time: '3 days ago',
             ),
-            Container(
-              child: Center(
-                child: TextButton(
-                    onPressed: () {},
-                    child: FxText.labelMedium("View All",
-                        fontWeight: 600, color: theme.colorScheme.primary)),
-              ),
+            Center(
+              child: TextButton(
+                  onPressed: () {},
+                  child: FxText.labelMedium("View All",
+                      fontWeight: 600, color: theme.colorScheme.primary)),
             )
           ],
         ),

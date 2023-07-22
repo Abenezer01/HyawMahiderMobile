@@ -1,5 +1,5 @@
 /*
-* File : Account Choose Bottom Sheet 
+* File : Account Choose Bottom Sheet
 * Version : 1.0.0
 * */
 
@@ -42,76 +42,72 @@ class _AccountBottomSheetWidgetState extends State<AccountBottomSheetWidget> {
           ),
           title: FxText.titleMedium("Account", fontWeight: 600),
         ),
-        body: Container(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-                color: theme.appBarTheme.backgroundColor,
+        body: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+              color: theme.appBarTheme.backgroundColor,
+              child: Row(
+                children: <Widget>[
+                  Icon(
+                    MdiIcons.informationOutline,
+                  ),
+                  Padding(
+                      padding: EdgeInsets.only(left: 8),
+                      child: FxText.titleSmall(
+                        "Tap on account image",
+                      )),
+                ],
+              ),
+            ),
+            Container(
+              margin: FxSpacing.all(20),
+              child: FxContainer(
+                borderRadiusAll: 4,
+                padding:
+                    EdgeInsets.only(left: 12, top: 6, right: 12, bottom: 6),
                 child: Row(
                   children: <Widget>[
-                    Icon(
-                      MdiIcons.informationOutline,
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: EdgeInsets.only(right: 8),
+                        child: FxTextField(
+                          autofocus: false,
+                          decoration: InputDecoration(
+                              hintText: "Search here",
+                              border: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              disabledBorder: InputBorder.none,
+                              errorBorder: InputBorder.none,
+                              focusedErrorBorder: InputBorder.none,
+                              isDense: true),
+                        ),
+                      ),
                     ),
-                    Padding(
-                        padding: EdgeInsets.only(left: 8),
-                        child: FxText.titleSmall(
-                          "Tap on account image",
-                        )),
+                    GestureDetector(
+                      onTap: () {
+                        _showBottomSheet(context);
+                      },
+                      child: Container(
+                        width: 36,
+                        height: 36,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              image: AssetImage(
+                                  "./assets/images/profile/avatar_2.jpg"),
+                              fit: BoxFit.fill),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
-              Container(
-                margin: FxSpacing.all(20),
-                child: FxContainer(
-                  borderRadiusAll: 4,
-                  padding:
-                      EdgeInsets.only(left: 12, top: 6, right: 12, bottom: 6),
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        flex: 1,
-                        child: Padding(
-                          padding: EdgeInsets.only(right: 8),
-                          child: Container(
-                            child: FxTextField(
-                              autofocus: false,
-                              decoration: InputDecoration(
-                                  hintText: "Search here",
-                                  border: InputBorder.none,
-                                  focusedBorder: InputBorder.none,
-                                  enabledBorder: InputBorder.none,
-                                  disabledBorder: InputBorder.none,
-                                  errorBorder: InputBorder.none,
-                                  focusedErrorBorder: InputBorder.none,
-                                  isDense: true),
-                            ),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          _showBottomSheet(context);
-                        },
-                        child: Container(
-                          width: 36,
-                          height: 36,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    "./assets/images/profile/avatar_2.jpg"),
-                                fit: BoxFit.fill),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ));
   }
 

@@ -27,8 +27,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-            child: FxOnBoarding(
+        body: FxOnBoarding(
       pages: <PageViewModel>[
         PageViewModel(
           theme.colorScheme.background,
@@ -146,6 +145,6 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
               letterSpacing: 0.6),
         ),
       ),
-    )));
+    ));
   }
 }

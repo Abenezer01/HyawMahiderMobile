@@ -76,28 +76,24 @@ class _SwitchWidgetState extends State<SwitchWidget> {
                 },
                 isSelected: isSelected,
                 children: <Widget>[
-                  Container(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: FxText.bodyLarge(
-                        'Open 24 Hours',
-                        fontWeight: 600,
-                        color: isSelected[0]
-                            ? theme.colorScheme.onSecondary
-                            : theme.colorScheme.onBackground,
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FxText.bodyLarge(
+                      'Open 24 Hours',
+                      fontWeight: 600,
+                      color: isSelected[0]
+                          ? theme.colorScheme.onSecondary
+                          : theme.colorScheme.onBackground,
                     ),
                   ),
-                  Container(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: FxText.bodyLarge(
-                        'Custom Hours',
-                        fontWeight: 600,
-                        color: isSelected[1]
-                            ? theme.colorScheme.onSecondary
-                            : theme.colorScheme.onBackground,
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FxText.bodyLarge(
+                      'Custom Hours',
+                      fontWeight: 600,
+                      color: isSelected[1]
+                          ? theme.colorScheme.onSecondary
+                          : theme.colorScheme.onBackground,
                     ),
                   ),
                 ],

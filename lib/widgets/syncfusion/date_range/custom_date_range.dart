@@ -54,9 +54,8 @@ class _CustomDateRangeState extends State<CustomDateRange> {
       body: Column(children: <Widget>[
         Expanded(
             flex: 8,
-            child: ListView(children: <Widget>[
-              SizedBox(height: 450, child: datePicker)
-            ])),
+            child: ListView(
+                children: <Widget>[SizedBox(height: 450, child: datePicker)])),
         Expanded(flex: 1, child: Container())
       ]),
     );

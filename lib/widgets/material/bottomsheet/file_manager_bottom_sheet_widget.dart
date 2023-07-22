@@ -26,7 +26,8 @@ class _FileManagerBottomSheetWidgetState
     super.initState();
     customTheme = AppTheme.customTheme;
     theme = AppTheme.theme;
-    WidgetsBinding.instance.addPostFrameCallback((_) => _showBottomSheet(context));
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => _showBottomSheet(context));
   }
 
   final List<int> _list = List.generate(20, (i) => i);
@@ -74,8 +75,7 @@ class _FileManagerBottomSheetWidgetState
                       MdiIcons.folder,
                       color: theme.colorScheme.onBackground,
                     ),
-                    title: FxText.bodyLarge(
-                        'Folder - ${_list[index]}',
+                    title: FxText.bodyLarge('Folder - ${_list[index]}',
                         color: theme.colorScheme.onBackground),
                   ));
             },

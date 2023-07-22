@@ -5,6 +5,7 @@ import 'package:hyaw_mahider/services/auth-service.dart';
 import 'package:flutx/flutx.dart';
 import 'package:hyaw_mahider/theme/app_theme.dart';
 import 'package:hyaw_mahider/homes/homes_screen.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -94,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         prefixIcon: const Icon(MdiIcons.emailOutline),
                       ),
-                      validator: FormBuilderValidators.required(context),
+                      validator: FormBuilderValidators.required(),
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 20),
@@ -126,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         obscureText: !_passwordVisible,
-                        validator: FormBuilderValidators.required(context),
+                        validator: FormBuilderValidators.required(),
                       ),
                     ),
                     Container(
